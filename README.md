@@ -1,6 +1,12 @@
 # Breezy
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
 
+## System Requirements
+- PHP >= 8.1
+- MySQL >= 8.0
+- Mailtrap account for email verification
+- Node.js >= 14.0
+
 ## How to Install
 - Clone the repository.
 - Install dependencies using composer install.
