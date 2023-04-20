@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User with
+        // User with email verification, verified account, and admin privileges
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
