@@ -22,30 +22,19 @@ Route::get('/', function () {
 })->name('home');
 
 Route::prefix('user')->middleware(['auth'])->group(function () {
-
     Route::middleware(['verified_email'])->group(function () {
         Route::get('/dashboard', DashboardController::class)->name('user.dashboard');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         Route::middleware('verified_account')->group(function () {
-            //
+            // Other routes here
         });
     });
 });
 Route::prefix('admin')->middleware(['auth', 'admin', 'verified_email', 'verified_account'])->group(function () {
     Route::get('/dashboard', AdminDashboardController::class)->name('admin.dashboard');
-    Route::resource('users', AdminUsersController::class)->names(
-        [
-            'index' => 'admin.users.index',
-            'create' => 'admin.users.create',
-            'store' => 'admin.users.store',
-            'show' => 'admin.users.show',
-            'edit' => 'admin.users.edit',
-            'update' => 'admin.users.update',
-            'destroy' => 'admin.users.destroy',
-        ]
-    );
+    Route::resource('users', AdminUsersController::class)->only(['index', 'destroy'])->names(['index' => 'admin.users.index', 'destroy' => 'admin.users.destroy',]);
 });
 
 require __DIR__ . '/auth.php';
