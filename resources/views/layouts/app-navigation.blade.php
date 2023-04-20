@@ -52,7 +52,7 @@
                             {{ __('Admin Dashboard') }}
                         </x-dropdown-link>
                         @endcan
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('user.profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -117,7 +117,7 @@
                     {{ __('Admin Dashboard') }}
                 </x-responsive-nav-link>
                 @endcan
-                <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                <x-responsive-nav-link :href="route('user.profile.edit')" :active="request()->routeIs('user.profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 

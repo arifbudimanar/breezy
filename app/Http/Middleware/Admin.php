@@ -19,6 +19,6 @@ class Admin
             return $next($request);
         }
 
-        return to_route('user.dashboard');
+        return to_route('user.dashboard')->with('warning', 'You are not authorized to access this page.');
     }
 }

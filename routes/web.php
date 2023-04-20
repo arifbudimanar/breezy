@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UsersController as AdminUsersController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\User\ProfileController as UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +23,10 @@ Route::get('/', function () {
 
 Route::prefix('user')->middleware(['auth'])->group(function () {
     Route::middleware(['verified_email'])->group(function () {
-        Route::get('/dashboard', DashboardController::class)->name('user.dashboard');
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::get('/dashboard', UserDashboardController::class)->name('user.dashboard');
+        Route::get('/profile', [UserProfileController::class, 'edit'])->name('user.profile.edit');
+        Route::patch('/profile', [UserProfileController::class, 'update'])->name('user.profile.update');
+        Route::delete('/profile', [UserProfileController::class, 'destroy'])->name('user.profile.destroy');
         Route::middleware('verified_account')->group(function () {
             // Other routes here
         });
