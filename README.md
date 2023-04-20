@@ -1,6 +1,9 @@
 # Breezy
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
-
+## Screenshots Dark
+![Alt text](screenshot/User%20Dashboard%20-%20Dark.png)
+![Alt text](screenshot/Admin%20Dashboard%20-%20Dark.png)
+![Alt text](screenshot/Admin%20Users%20-%20Dark.png)
 ## System Requirements
 - PHP >= 8.1
 - MySQL >= 8.0
