@@ -76,6 +76,21 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return back()->with('success', 'User ' . $user->name . ' deleted successfully!');
+    }
+    public function makeAdmin(User $user)
+    {
+        $user->timestamps = false;
+        $user->is_admin = 1;
+        $user->save();
+        return back()->with('success', $user->name . ' made admin successfully!');
+    }
+    public function removeAdmin(User $user)
+    {
+        $user->timestamps = false;
+        $user->is_admin = 1;
+        $user->save();
+        return back()->with('success', $user->name . ' remove admin successfully!');
     }
 }
