@@ -32,17 +32,19 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   ```
 
 ## Account Details
-- Admin User : no verified email, no verified account, no admin access
+- Admin User : verified email, verified account, admin access
   - Email:  admin@admin.com
   - Password:  password
 
-- Normal User : everything false
+- Normal User : no verified email, no verified account, no admin access
   - Email:  user1@user.com
   - Password:  password
   
 - Normal User : verified email, verified account, no admin access
   - Email:  user2@user.com
   - Password:  password
+  
+For better understanding of the application, you can check DatabaseSeeder.php and UserFactory.php files.
   
 ## Free to Use
 This Laravel application is free to use and modify under the MIT license. Feel free to use it as a starting point for your own Laravel projects.Laravel Application
