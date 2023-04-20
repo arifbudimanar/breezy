@@ -5,15 +5,30 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        return view('admin.users.index');
+        $search = request('search');
+        if ($search) {
+            $users = User::where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+                ->orderBy('name')
+                ->paginate(10)
+                ->withQueryString();
+        } else {
+            $users = User::orderBy('name')
+                ->paginate(10);
+        }
+
+        return view('admin.users.index', compact('users'));
     }
 
     /**
