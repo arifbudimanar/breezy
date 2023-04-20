@@ -30,6 +30,20 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   ```
   php artisan serve
   ```
+
+## Account Details
+- Admin User : no verified email, no verified account, no admin access
+  - Email:  admin@admin.com
+  - Password:  password
+
+- Normal User : everything false
+  - Email:  user1@user.com
+  - Password:  password
+  
+- Normal User : verified email, verified account, no admin access
+  - Email:  user2@user.com
+  - Password:  password
+  
 ## Free to Use
 This Laravel application is free to use and modify under the MIT license. Feel free to use it as a starting point for your own Laravel projects.Laravel Application
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
