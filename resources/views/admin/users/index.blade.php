@@ -151,6 +151,7 @@
                 @if ($users->hasPages())
                 <div class="mt-6">
                     {{ $users->links() }}
+                    {{-- {{ $users->links('vendor.pagination.tailwind') }} --}}
                     {{-- {{ $users->links('vendor.pagination.simple-tailwind') }} --}}
                     {{-- {{ $users->links('vendor.pagination.custom-tailwind') }} --}}
                 </div>
