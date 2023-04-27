@@ -99,9 +99,9 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @if ($user->is_admin)
-                                        <p class="text-indigo-500">Admin</p>
+                                    <p class="text-indigo-500">Admin</p>
                                     @else
-                                        <p>User</p>
+                                    <p>User</p>
                                     @endif
                                 </td>
                                 <td class="px-6 py-4">
@@ -111,47 +111,42 @@
                                         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
                                             @csrf
                                             @method('PATCH')
-                                            <button type="submit"
-                                                class="text-red-600 dark:text-red-400 whitespace-nowrap">
+                                            <x-action.red>
                                                 Remove Admin
-                                            </button>
+                                            </x-action.red>
                                         </form>
                                         @else
                                         <form action="{{ route('admin.users.makeadmin', $user) }}" method="Post">
                                             @csrf
                                             @method('PATCH')
-                                            <button type="submit"
-                                                class="text-indigo-600 dark:text-indigo-400 whitespace-nowrap">
+                                            <x-action.indigo>
                                                 Make Admin
-                                            </button>
+                                            </x-action.indigo>
                                         </form>
                                         @endif
                                         @if ($user->is_verified)
                                         <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
                                             @csrf
                                             @method('PATCH')
-                                            <button type="submit"
-                                                class="text-red-600 dark:text-red-400 whitespace-nowrap">
+                                            <x-action.red>
                                                 Unverify
-                                            </button>
+                                            </x-action.red>
                                         </form>
                                         @else
                                         <form action="{{ route('admin.users.verify', $user) }}" method="Post">
                                             @csrf
                                             @method('PATCH')
-                                            <button type="submit"
-                                                class="text-indigo-600 dark:text-indigo-400 whitespace-nowrap">
+                                            <x-action.indigo>
                                                 Verify
-                                            </button>
+                                            </x-action.indigo>
                                         </form>
                                         @endif
                                         <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit"
-                                                class="text-red-600 dark:text-red-400 whitespace-nowrap">
+                                            <x-action.red>
                                                 Delete
-                                            </button>
+                                            </x-action.red>
                                         </form>
                                     </div>
                                 </td>
