@@ -81,6 +81,9 @@ class UsersController extends Controller
     }
     public function makeAdmin(User $user)
     {
+        if ($user->is_verified == 0) {
+            return back()->with('warning', $user->name . ' is not verified!');
+        }
         $user->timestamps = false;
         $user->is_admin = 1;
         $user->save();
@@ -92,5 +95,26 @@ class UsersController extends Controller
         $user->is_admin = 1;
         $user->save();
         return back()->with('success', $user->name . ' remove admin successfully!');
+    }
+    public function verify(User $user)
+    {
+        $user->timestamps = false;
+        $user->is_verified = 1;
+        $user->save();
+        return back()->with('success', $user->name . ' verified successfully!');
+    }
+    public function unverify(User $user)
+    {
+        if ($user->is_admin) {
+            $user->timestamps = false;
+            $user->is_admin = 0;
+            $user->is_verified = 0;
+            $user->save();
+            return back()->with('success', $user->name . ' remove admin and unverified successfully!');
+        }
+        $user->timestamps = false;
+        $user->is_verified = 0;
+        $user->save();
+        return back()->with('success', $user->name . ' unverified successfully!');
     }
 }

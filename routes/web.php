@@ -35,8 +35,10 @@ Route::prefix('user')->middleware(['auth'])->group(function () {
 Route::prefix('admin')->middleware(['auth', 'admin', 'verified_email', 'verified_account'])->group(function () {
     Route::get('/dashboard', AdminDashboardController::class)->name('admin.dashboard');
     Route::resource('users', AdminUsersController::class)->only(['index', 'destroy'])->names(['index' => 'admin.users.index', 'destroy' => 'admin.users.destroy',]);
-    Route::patch('/users/{user}/make-admin', [AdminUsersController::class, 'makeAdmin'])->name('admin.users.make-admin');
-    ROute::patch('/users/{user}/remove-admin', [AdminUsersController::class, 'removeAdmin'])->name('admin.users.remove-admin');
+    Route::patch('/users/{user}/make-admin', [AdminUsersController::class, 'makeAdmin'])->name('admin.users.makeadmin');
+    Route::patch('/users/{user}/remove-admin', [AdminUsersController::class, 'removeAdmin'])->name('admin.users.removeadmin');
+    Route::patch('/users/{user}/verify', [AdminUsersController::class, 'verify'])->name('admin.users.verify');
+    Route::patch('/users/{user}/unverify', [AdminUsersController::class, 'unverify'])->name('admin.users.unverify');
 });
 
 require __DIR__ . '/auth.php';

@@ -107,33 +107,52 @@
                                 <td class="px-6 py-4">
                                     <div class="flex space-x-3">
                                         {{-- Action here --}}
-                                        {{-- @if ($user->is_admin)
-                                        <form action="{{ route('user.removeadmin', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit"
-                                                class="text-blue-600 dark:text-blue-400 whitespace-nowrap">
-                                                Remove Admin
-                                            </button>
-                                        </form>
-                                        @else
-                                        <form action="{{ route('user.makeadmin', $user) }}" method="Post">
+                                        @if ($user->is_admin)
+                                        <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit"
                                                 class="text-red-600 dark:text-red-400 whitespace-nowrap">
+                                                Remove Admin
+                                            </button>
+                                        </form>
+                                        @else
+                                        <form action="{{ route('admin.users.makeadmin', $user) }}" method="Post">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit"
+                                                class="text-indigo-600 dark:text-indigo-400 whitespace-nowrap">
                                                 Make Admin
                                             </button>
                                         </form>
-                                        @endif --}}
-                                        {{-- <form action="{{ route('user.destroy', $user) }}" method="Post">
+                                        @endif
+                                        @if ($user->is_verified)
+                                        <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit"
+                                                class="text-red-600 dark:text-red-400 whitespace-nowrap">
+                                                Unverify
+                                            </button>
+                                        </form>
+                                        @else
+                                        <form action="{{ route('admin.users.verify', $user) }}" method="Post">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit"
+                                                class="text-indigo-600 dark:text-indigo-400 whitespace-nowrap">
+                                                Verify
+                                            </button>
+                                        </form>
+                                        @endif
+                                        <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit"
                                                 class="text-red-600 dark:text-red-400 whitespace-nowrap">
                                                 Delete
                                             </button>
-                                        </form> --}}
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
