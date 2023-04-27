@@ -25,9 +25,9 @@
                     <form class="flex items-center gap-2">
                         <x-text-input id="search" name="search" type="text" class="w-full" placeholder="Search"
                             value="{{ request('search') }}" autofocus />
-                        <x-primary-button type="submit">
+                        <x-button.primary type="submit">
                             {{ __('Search') }}
-                        </x-primary-button>
+                        </x-button.primary>
                     </form>
                 </div>
                 {{-- Table User --}}
