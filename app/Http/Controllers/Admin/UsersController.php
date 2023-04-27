@@ -86,10 +86,10 @@ class UsersController extends Controller
     public function makeAdmin(User $user)
     {
         if ($user->email_verified_at == null) {
-            return back()->with('warning', $user->name . ' email is not verified!');
+            return back()->with('warning', 'Error, ' . $user->name . ' email is not verified!');
         }
         if ($user->is_verified == 0) {
-            return back()->with('warning', $user->name . ' is not verified!');
+            return back()->with('warning', 'Error, ' . $user->name . ' is not verified!');
         }
         $user->timestamps = false;
         $user->is_admin = 1;
@@ -114,7 +114,7 @@ class UsersController extends Controller
     public function verify(User $user)
     {
         if ($user->email_verified_at == null) {
-            return back()->with('warning', $user->name . ' email is not verified!');
+            return back()->with('warning', 'Error, ' . $user->name . ' email is not verified!');
         }
         $user->timestamps = false;
         $user->is_verified = 1;
