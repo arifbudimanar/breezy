@@ -79,8 +79,15 @@ class UsersController extends Controller
         $user->delete();
         return back()->with('success', 'User ' . $user->name . ' deleted successfully!');
     }
+
+    /**
+     * Make user admin.
+     */
     public function makeAdmin(User $user)
     {
+        if ($user->email_verified_at == null) {
+            return back()->with('warning', $user->name . ' email is not verified!');
+        }
         if ($user->is_verified == 0) {
             return back()->with('warning', $user->name . ' is not verified!');
         }
@@ -89,6 +96,10 @@ class UsersController extends Controller
         $user->save();
         return back()->with('success', $user->name . ' made admin successfully!');
     }
+
+    /**
+     * Remove user admin.
+     */
     public function removeAdmin(User $user)
     {
         $user->timestamps = false;
@@ -96,13 +107,24 @@ class UsersController extends Controller
         $user->save();
         return back()->with('success', $user->name . ' remove admin successfully!');
     }
+
+    /**
+     * Verify user.
+     */
     public function verify(User $user)
     {
+        if ($user->email_verified_at == null) {
+            return back()->with('warning', $user->name . ' email is not verified!');
+        }
         $user->timestamps = false;
         $user->is_verified = 1;
         $user->save();
         return back()->with('success', $user->name . ' verified successfully!');
     }
+
+    /**
+     * Unverify user. If user is admin, remove admin and unverify.
+     */
     public function unverify(User $user)
     {
         if ($user->is_admin) {
