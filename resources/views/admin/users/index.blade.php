@@ -99,9 +99,9 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @if ($user->is_admin)
-                                    <p class="text-indigo-500">Admin</p>
+                                    <x-badge.admin />
                                     @else
-                                    <p>User</p>
+                                    <x-badge.user />
                                     @endif
                                 </td>
                                 <td class="px-6 py-4">
