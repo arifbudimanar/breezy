@@ -51,7 +51,7 @@ class UsersController extends Controller
     public function removeAdmin(User $user): RedirectResponse
     {
         $user->timestamps = false;
-        $user->is_admin = 1;
+        $user->is_admin = 0;
         $user->save();
         return back()->with('success', $user->name . ' remove admin successfully!');
     }
