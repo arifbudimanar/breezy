@@ -21,6 +21,13 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
             'is_verified' => true,
         ]);
+        User::factory()->create([
+            'name' => 'Arif Budiman Arrosyid',
+            'email' => 'arifbudimanarrosyid@gmail.com',
+            'email_verified_at' => now(),
+            'is_admin' => true,
+            'is_verified' => true,
+        ]);
         // User with no email verification
         User::factory()->create([
             'name' => 'User 1',
