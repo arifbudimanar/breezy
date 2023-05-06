@@ -81,6 +81,7 @@ class UsersController extends Controller
         $user->save();
         return back()->with('success', $user->name . ' unverified successfully!');
     }
+
     public function resetPassword(User $user): RedirectResponse
     {
         $user->timestamps = false;
