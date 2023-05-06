@@ -81,4 +81,11 @@ class UsersController extends Controller
         $user->save();
         return back()->with('success', $user->name . ' unverified successfully!');
     }
+    public function resetPassword(User $user): RedirectResponse
+    {
+        $user->timestamps = false;
+        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+        $user->save();
+        return back()->with('success', $user->name . ' password reset successfully!');
+    }
 }

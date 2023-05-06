@@ -40,6 +40,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'user2@user.com',
             'is_verified' => false,
         ]);
-        User::factory(10)->create();
+        User::factory(1000)->create();
     }
 }

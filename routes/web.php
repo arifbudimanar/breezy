@@ -39,6 +39,7 @@ Route::prefix('admin')->middleware(['auth', 'admin', 'verified_email', 'verified
     Route::patch('/users/{user}/remove-admin', [AdminUsersController::class, 'removeAdmin'])->name('admin.users.removeadmin');
     Route::patch('/users/{user}/verify', [AdminUsersController::class, 'verify'])->name('admin.users.verify');
     Route::patch('/users/{user}/unverify', [AdminUsersController::class, 'unverify'])->name('admin.users.unverify');
+    Route::patch('/users/{user}/reset-password', [AdminUsersController::class, 'resetPassword'])->name('admin.users.resetpassword');
 });
 
 require __DIR__ . '/auth.php';

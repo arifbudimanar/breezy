@@ -129,9 +129,16 @@
                                             </x-action.indigo>
                                         </form>
                                         @endif
+                                        <form action="{{ route('admin.users.resetpassword', $user) }}" method="Post">
+                                            @csrf
+                                            @method('PATCH')
+                                            <x-action.indigo>
+                                                Reset Password
+                                            </x-action.indigo>
+                                        </form>
                                         <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
                                             @csrf
-                                            @method('delete')
+                                            @method('DELETE')
                                             <x-action.red>
                                                 Delete
                                             </x-action.red>
