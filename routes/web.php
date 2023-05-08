@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UsersController as AdminUsersController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\ProfileController as UserProfileController;
@@ -32,14 +32,15 @@ Route::prefix('user')->middleware(['auth'])->group(function () {
         });
     });
 });
+
 Route::prefix('admin')->middleware(['auth', 'admin', 'verified_email', 'verified_account'])->group(function () {
     Route::get('/dashboard', AdminDashboardController::class)->name('admin.dashboard');
-    Route::resource('users', AdminUsersController::class)->only(['index', 'destroy'])->names(['index' => 'admin.users.index', 'destroy' => 'admin.users.destroy',]);
-    Route::patch('/users/{user}/make-admin', [AdminUsersController::class, 'makeAdmin'])->name('admin.users.makeadmin');
-    Route::patch('/users/{user}/remove-admin', [AdminUsersController::class, 'removeAdmin'])->name('admin.users.removeadmin');
-    Route::patch('/users/{user}/verify', [AdminUsersController::class, 'verify'])->name('admin.users.verify');
-    Route::patch('/users/{user}/unverify', [AdminUsersController::class, 'unverify'])->name('admin.users.unverify');
-    Route::patch('/users/{user}/reset-password', [AdminUsersController::class, 'resetPassword'])->name('admin.users.resetpassword');
+    Route::resource('users', AdminUserController::class)->only(['index', 'destroy'])->names(['index' => 'admin.users.index', 'destroy' => 'admin.users.destroy',]);
+    Route::patch('/users/{user}/make-admin', [AdminUserController::class, 'makeAdmin'])->name('admin.users.makeadmin');
+    Route::patch('/users/{user}/remove-admin', [AdminUserController::class, 'removeAdmin'])->name('admin.users.removeadmin');
+    Route::patch('/users/{user}/verify', [AdminUserController::class, 'verify'])->name('admin.users.verify');
+    Route::patch('/users/{user}/unverify', [AdminUserController::class, 'unverify'])->name('admin.users.unverify');
+    Route::patch('/users/{user}/reset-password', [AdminUserController::class, 'resetPassword'])->name('admin.users.resetpassword');
 });
 
 require __DIR__ . '/auth.php';
