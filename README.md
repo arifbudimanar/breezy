@@ -36,6 +36,7 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
       - Not Verified Users
       - Not Verified Email Users
     - User
+      - Search by Name or Email
       - Make Admin
       - Remove Admin
       - Verify Account
