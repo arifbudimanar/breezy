@@ -9,7 +9,7 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("You're logged in as Admin, ") }}{{ Auth::user()->name }}
+                    {{ __("You're logged in as Admin, :Name", ['name' => Auth::user()->name]) }}
                 </x-card.title>
                 <x-card.description>
                     {{ __('Welcome to admin dashboard.') }}
@@ -33,7 +33,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 mt-6">
                     <x-subcard.dashboard>
                         <x-subcard.title>
-                            {{ __("All User") }}
+                            {{ __("All Users") }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $allUsers }}
@@ -41,7 +41,7 @@
                     </x-subcard.dashboard>
                     <x-subcard.dashboard>
                         <x-subcard.title>
-                            {{ __("Admin User") }}
+                            {{ __("Admin Users") }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $adminUsers }}
@@ -49,7 +49,7 @@
                     </x-subcard.dashboard>
                     <x-subcard.dashboard>
                         <x-subcard.title>
-                            {{ __("Not Verified Account User") }}
+                            {{ __("Not Verified Account Users") }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $notVerifiedUsers }}
@@ -57,7 +57,7 @@
                     </x-subcard.dashboard>
                     <x-subcard.dashboard>
                         <x-subcard.title>
-                            {{ __("Not Verified Email User") }}
+                            {{ __("Not Verified Email Users") }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $notVerifiedEmailUsers }}

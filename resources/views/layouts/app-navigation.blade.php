@@ -62,6 +62,7 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
+                @include('layouts.partials.language')
             </div>
 
             <!-- Hamburger -->
@@ -124,5 +125,6 @@
                 </form>
             </div>
         </div>
+        @include('layouts.partials.language-responsive')
     </div>
 </nav>

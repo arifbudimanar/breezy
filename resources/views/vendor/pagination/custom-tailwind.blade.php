@@ -25,17 +25,17 @@
         <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
             <div>
                 <p class="text-sm text-gray-700 dark:text-gray-200 leading-5">
-                    {!! __('Showing') !!}
+                    {!! __('pagination.showing') !!}
                     @if ($paginator->firstItem())
                         <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                        {!! __('to') !!}
+                        {!! __('pagination.to') !!}
                         <span class="font-medium">{{ $paginator->lastItem() }}</span>
                     @else
                         {{ $paginator->count() }}
                     @endif
-                    {!! __('of') !!}
+                    {!! __('pagination.of') !!}
                     <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('results') !!}
+                    {!! __('pagination.results') !!}
                 </p>
             </div>
 

@@ -9,7 +9,7 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("All User") }}
+                    {{ __("All Users") }}
                 </x-card.title>
                 @if (request('search'))
                 <x-card.description>
@@ -23,7 +23,7 @@
                 {{-- Search --}}
                 <div class="mt-6 lg:w-1/2 2xl:w-1/3">
                     <form class="flex items-center gap-2">
-                        <x-text-input id="search" name="search" type="text" class="w-full" placeholder="Search"
+                        <x-text-input id="search" name="search" type="text" class="w-full" placeholder="{{ __('Insert name or email') }}"
                             value="{{ request('search') }}" autofocus />
                         <x-button.primary type="submit">
                             {{ __('Search') }}
@@ -36,22 +36,22 @@
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    No.
+                                    {{ __('No') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Name
+                                     {{ __('Name') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Email
+                                    {{ __('Email') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Verified
+                                    {{ __('Verified') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Role
+                                    {{ __('Role') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Action
+                                    {{ __('Actions') }}
                                 </th>
                             </tr>
                         </thead>
@@ -100,7 +100,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <x-action.red>
-                                                Remove Admin
+                                                {{ __('Remove Admin') }}
                                             </x-action.red>
                                         </form>
                                         @else
@@ -108,7 +108,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <x-action.indigo>
-                                                Make Admin
+                                                {{ __('Make Admin') }}
                                             </x-action.indigo>
                                         </form>
                                         @endif
@@ -117,7 +117,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <x-action.red>
-                                                Unverify
+                                                {{ __('Unverify') }}
                                             </x-action.red>
                                         </form>
                                         @else
@@ -125,7 +125,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <x-action.indigo>
-                                                Verify
+                                                {{ __('Verify') }}
                                             </x-action.indigo>
                                         </form>
                                         @endif
@@ -133,14 +133,14 @@
                                             @csrf
                                             @method('PATCH')
                                             <x-action.indigo>
-                                                Reset Password
+                                                {{ __('Reset Password') }}
                                             </x-action.indigo>
                                         </form>
                                         <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
                                             @csrf
                                             @method('DELETE')
                                             <x-action.red>
-                                                Delete
+                                                {{ __('Delete') }}
                                             </x-action.red>
                                         </form>
                                     </div>
@@ -149,7 +149,7 @@
                             @empty
                             <tr class="bg-white dark:bg-gray-800">
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                    Empty
+                                    {{ __('Data Not Found') }}
                                 </td>
                             </tr>
                             @endforelse

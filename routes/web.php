@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\User\ProfileController as UserProfileController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\User\ProfileController as UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use App\Http\Controllers\User\ProfileController as UserProfileController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+// ROute for changing language
+Route::get('/lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 Route::prefix('user')->middleware(['auth'])->group(function () {
     Route::middleware(['verified_email'])->group(function () {

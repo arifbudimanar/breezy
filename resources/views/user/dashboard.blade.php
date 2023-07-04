@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("You're logged in, ") }}{{ Auth::user()->name }}
+                    {{ __("You're logged in, :Name", ['name' => Auth::user()->name]) }}
                 </x-card.title>
                 <x-card.description>
                     {{ __('Welcome to your dashboard. This is where your content will be summarized.') }}
