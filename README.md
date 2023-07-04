@@ -4,12 +4,44 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
 ![Alt text](screenshot/User%20Dashboard%20-%20Dark.png)
 ![Alt text](screenshot/Admin%20Dashboard%20-%20Dark.png)
 ![Alt text](screenshot/Admin%20Users%20-%20Dark.png)
+## Feature
+- Translation
+  - Indonesian
+  - English
+- UI Theme
+  - Dark
+  - Light
+- Authentication
+  - Login
+  - Register
+  - Forgot Password
+  - Reset Password
+  - Email Verification
+- Role
+  - User
+    - Dashboard
+    - Profile
+      - Update Profile
+      - Change Password
+      - Delete Account
+  - Admin
+    - Dashboard
+      - All Users
+      - Admin Users
+      - Not Verified Users
+      - Not Verified Email Users
+    - User
+      - Make Admin
+      - Remove Admin
+      - Verify Account
+      - Unverify Account
+      - Reset Password
+      - Delete User
 ## System Requirements
 - PHP >= 8.1
 - MySQL >= 8.0
 - Mailtrap account for email verification
 - Node.js >= 14.0
-
 ## How to Install
 - Clone the repository.
 - Install dependencies using composer install.
@@ -39,7 +71,6 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   ```
   php artisan serve
   ```
-
 ## Account Details
 - Admin User : verified email, verified account, admin access
   - Email:  admin@admin.com
@@ -54,7 +85,6 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   - Password:  password
   
 For better understanding of the application, you can check DatabaseSeeder.php and UserFactory.php files.
-  
 ## Free to Use
 This Laravel application is free to use and modify under the MIT license. Feel free to use it as a starting point for your own Laravel projects.Laravel Application
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
