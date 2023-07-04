@@ -21,7 +21,6 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-// ROute for changing language
 Route::get('/lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 Route::prefix('user')->middleware(['auth'])->group(function () {
