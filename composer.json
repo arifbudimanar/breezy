@@ -6,8 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "gehrisandro/tailwind-merge-laravel": "^0.1.0",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^10.8",
+        "laravel/framework": "^10.14.1",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8"
     },

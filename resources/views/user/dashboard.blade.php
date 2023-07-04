@@ -16,7 +16,7 @@
                 </x-card.description>
             </x-card.app>
             @if (Auth::user()->is_verified == false)
-            <x-card.app>
+            <x-card.app class="bg-red-200 dark:bg-red-900">
                 <x-card.title>
                     {{ __('Your account is not verified') }}
                 </x-card.title>
