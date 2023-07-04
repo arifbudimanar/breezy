@@ -11,9 +11,11 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
 - Translation
   - Indonesian
   - English
-- UI Theme
-  - Dark
-  - Light
+- UI
+  - Dark Theme
+  - Light Theme
+  - Responsive
+  - Floating Notification
 - Authentication
   - Login
   - Register
