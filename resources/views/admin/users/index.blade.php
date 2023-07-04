@@ -23,7 +23,7 @@
                 {{-- Search --}}
                 <div class="mt-6 lg:w-1/2 2xl:w-1/3">
                     <form class="flex items-center gap-2">
-                        <x-text-input id="search" name="search" type="text" class="w-full" placeholder="{{ __('Insert name or email') }}"
+                        <x-text-input id="search" name="search" type="text" class="w-full" placeholder="{{ __('Name or email') }}"
                             value="{{ request('search') }}" autofocus />
                         <x-button.primary type="submit">
                             {{ __('Search') }}

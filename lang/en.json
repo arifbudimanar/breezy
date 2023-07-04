@@ -93,7 +93,7 @@
     "Search results for : ": "Search results for : ",
     "Manage all user, search by name or email.": "Manage all user, search by name or email.",
     "Search": "Search",
-    "Insert name or email": "Insert name or email",
+    "Name or email": "Name or email",
     "No": "No",
     "Verified": "Verified",
     "Role": "Role",
@@ -104,5 +104,16 @@
     "Verify": "Verify",
     "Delete": "Delete",
     "Data Not Found": "Data Not Found",
-    "Language": "Language"
+    "Language": "Language",
+    "User :name deleted successfully!": "User :name deleted successfully!",
+    "Error, :name account is not verified!": "Error, :name account is not verified!",
+    "Error, :name email is not verified!": "Error, :name email is not verified!",
+    ":name made admin successfully!": ":name made admin successfully!",
+    ":name remove admin successfully!": ":name remove admin successfully!",
+    ":name account verified successfully!": ":name verified successfully!",
+    ":name remove admin and unverified successfully!": ":name remove admin and unverified successfully!",
+    ":name unverified successfully!": ":name unverified successfully!",
+    ":name password reset successfully!": ":name password reset successfully!",
+    "Profile updated successfully.": "Profile updated successfully.",
+    "Password updated successfully.": "Password updated successfully."
 }

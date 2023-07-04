@@ -93,7 +93,7 @@
     "Search results for : ": "Hasil pencarian untuk : ",
     "Manage all user, search by name or email.": "Kelola semua pengguna, cari berdasarkan nama atau surel.",
     "Search": "Cari",
-    "Insert name or email": "Masukkan nama atau surel",
+    "Name or email": "Nama atau surel",
     "No": "No",
     "Verified": "Terverifikasi",
     "Role": "Peran",
@@ -104,5 +104,16 @@
     "Verify": "Verifikasi",
     "Delete": "Hapus",
     "Data Not Found": "Data Tidak Ditemukan",
-    "Language": "Bahasa"
+    "Language": "Bahasa",
+    "User :name deleted successfully!": "User :name berhasil dihapus!",
+    "Error, :name account is not verified!": "Kesalahan, akun :name belum diverifikasi!",
+    "Error, :name email is not verified!": "Kesalahan, surel :name belum diverifikasi!",
+    ":name made admin successfully!": ":name berhasil dibuat admin!",
+    ":name remove admin successfully!": ":name berhasil dihapus dari admin!",
+    ":name verified successfully!": ":name berhasil diverifikasi!",
+    ":name remove admin and unverified successfully!": ":name berhasil dihapus dari admin dan dibatalkan verifikasinya!",
+    ":name unverified successfully!": ":name berhasil dibatalkan verifikasinya!",
+    ":name password reset successfully!": ":name berhasil diatur ulang kata sandi!",
+    "Profile updated successfully.": "Profil berhasil diperbarui.",
+    "Password updated successfully.": "Kata sandi berhasil diperbarui."
 }
