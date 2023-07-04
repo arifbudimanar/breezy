@@ -115,5 +115,6 @@
     ":name unverified successfully!": ":name unverified successfully!",
     ":name password reset successfully!": ":name password reset successfully!",
     "Profile updated successfully.": "Profile updated successfully.",
-    "Password updated successfully.": "Password updated successfully."
+    "Password updated successfully.": "Password updated successfully.",
+    "Your account is not verified!": "Your account is not verified!"
 }

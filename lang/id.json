@@ -115,5 +115,6 @@
     ":name unverified successfully!": ":name berhasil dibatalkan verifikasinya!",
     ":name password reset successfully!": ":name berhasil diatur ulang kata sandi!",
     "Profile updated successfully.": "Profil berhasil diperbarui.",
-    "Password updated successfully.": "Kata sandi berhasil diperbarui."
+    "Password updated successfully.": "Kata sandi berhasil diperbarui.",
+    "Your account is not verified!": "Akun Anda belum diverifikasi!"
 }
