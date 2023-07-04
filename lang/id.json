@@ -76,7 +76,7 @@
     "You're logged in, :Name": "Anda sudah masuk, :Name",
     "You're logged in as Admin, :Name": "Anda sudah masuk sebagai Admin, :Name",
     "Welcome to your dashboard. This is where your content will be summarized.": "Selamat datang di dasbor Anda. Ini adalah tempat di mana konten Anda akan diringkas.",
-    "Your account is not verified": "Akun Anda belum diverifikasi",
+    "Your account is not verified": "Akun anda belum diverifikasi",
     "Please contact admin to verify your account.": "Silakan hubungi admin untuk memverifikasi akun Anda.",
     "Welcome to admin dashboard.": "Selamat datang di dasbor admin.",
     "Summary": "Ringkasan",
@@ -116,5 +116,5 @@
     ":name password reset successfully!": ":name berhasil diatur ulang kata sandi!",
     "Profile updated successfully.": "Profil berhasil diperbarui.",
     "Password updated successfully.": "Kata sandi berhasil diperbarui.",
-    "Your account is not verified!": "Akun Anda belum diverifikasi!"
+    "Your account is not verified!": "Akun anda belum diverifikasi!"
 }
