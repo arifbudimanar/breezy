@@ -16,6 +16,7 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   - Light Theme
   - Responsive
   - Floating Notification
+  - Custom Pagination Style
 - Authentication
   - Login
   - Register
