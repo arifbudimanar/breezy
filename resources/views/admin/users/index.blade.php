@@ -159,6 +159,9 @@
                 {{-- Pagination --}}
                 @if ($users->hasPages())
                 <div class="mt-6">
+                    {{-- The default pagination view is pagination.custom-tailwind blade component.
+                    You can change the default pagination view using the AppServiceProvider
+                    or by passing the pagination view as parameter to the links method. --}}
                     {{ $users->links() }}
                     {{-- {{ $users->links('vendor.pagination.tailwind') }} --}}
                     {{-- {{ $users->links('vendor.pagination.simple-tailwind') }} --}}

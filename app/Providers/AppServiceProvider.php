@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Change the default pagination view
         Paginator::defaultView('vendor.pagination.custom-tailwind');
     }
 }
