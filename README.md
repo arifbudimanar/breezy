@@ -2,11 +2,11 @@
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
 ## Screenshots
 ### User Dashboard
-![User Dashboard](<screenshot/User Dashboard - ID.png>)
+![User Dashboard](<screenshot/UserDashboard-ID.png>)
 ### Admin Dashboard
-![Admin Dashboard](<screenshot/Admin Dashboard - EN.png>)
+![Admin Dashboard](<screenshot/AdminDashboard-EN.png>)
 ### Admin Users
-![Admin Users](<screenshot/Admin Users - EN.png>)
+![Admin Users](<screenshot/AdminUsers-EN.png>)
 ## Feature
 - Translation
   - Indonesian
