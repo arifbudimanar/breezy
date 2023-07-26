@@ -123,7 +123,7 @@
                             @endif
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
-                            <div class="w-48">Role</div>
+                            <div class="w-48">{{ __('Role') }}</div>
                             <div>
                                 @if ($user->is_admin)
                                 <x-badge.admin />
@@ -133,11 +133,11 @@
                             </div>
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
-                            <div class="w-48">Created At</div>
+                            <div class="w-48">{{ __('Created At') }}</div>
                             <div>{{ $user->created_at }} - {{ $user->created_at->diffForHumans() }}</div>
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
-                            <div class="w-48">Updated At</div>
+                            <div class="w-48">{{ __('Updated At') }}</div>
                             <div>{{ $user->updated_at }} - {{ $user->updated_at->diffForHumans() }}</div>
                         </div>
                     </div>

@@ -128,5 +128,7 @@
     "Admin": "Admin",
     "User": "Pengguna",
     "Verified Email": "Surel Terverifikasi",
-    "Verified Account": "Akun Terverifikasi"
+    "Verified Account": "Akun Terverifikasi",
+    "Created At": "Dibuat Pada",
+    "Updated At": "Diperbarui Pada"
 }

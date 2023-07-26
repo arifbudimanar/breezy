@@ -128,5 +128,7 @@
     "Admin": "Admin",
     "User": "User",
     "Verified Email": "Verified Email",
-    "Verified Account": "Verified Account"
+    "Verified Account": "Verified Account",
+    "Created At": "Created At",
+    "Updated At": "Updated At"
 }
