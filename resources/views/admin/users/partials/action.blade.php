@@ -11,6 +11,9 @@
     </x-slot>
 
     <x-slot name="content">
+        <x-dropdown-link :href="route('admin.users.edit', $user)">
+            {{ __('Edit') }}
+        </x-dropdown-link>
         @if ($user->is_admin == true)
         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
             @csrf

@@ -41,11 +41,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'verified_e
         ->only([
             'index',
             'show',
+            'edit',
+            'update',
             'destroy'
         ])
         ->names([
             'index' => 'users.index',
-            'view' => 'users.show',
+            'show' => 'users.show',
+            'edit' => 'users.edit',
+            'update' => 'users.update',
             'destroy' => 'users.destroy',
         ]);
     Route::patch('/users/{user}/make-admin', [AdminUserController::class, 'makeAdmin'])->name('users.makeadmin');

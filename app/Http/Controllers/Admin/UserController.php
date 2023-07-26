@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Response;
 
 class UserController extends Controller
 {
@@ -30,6 +31,27 @@ class UserController extends Controller
     public function show(User $user): View
     {
         return view('admin.users.show', compact('user'));
+    }
+
+    public function edit(User $user): View
+    {
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function update(User $user, Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+        ]);
+        if ($user->email !== $request->email) {
+            $user->email_verified_at = null;
+        }
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        return back()->with('success', __('User :name updated successfully!', ['name' => $user->name]));
     }
 
     public function destroy(User $user): RedirectResponse
