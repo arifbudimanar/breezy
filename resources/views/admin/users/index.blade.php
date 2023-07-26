@@ -23,8 +23,8 @@
                 {{-- Search --}}
                 <div class="mt-6 lg:w-1/2 2xl:w-1/3">
                     <form class="flex items-center gap-2">
-                        <x-text-input id="search" name="search" type="text" class="w-full" placeholder="{{ __('Name or email') }}"
-                            value="{{ request('search') }}" autofocus />
+                        <x-text-input id="search" name="search" type="text" class="w-full"
+                            placeholder="{{ __('Name or email') }}" value="{{ request('search') }}" autofocus />
                         <x-button.primary type="submit">
                             {{ __('Search') }}
                         </x-button.primary>
@@ -36,23 +36,23 @@
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    {{ __('No') }}
+                                    {{ __('#') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                     {{ __('Name') }}
+                                    {{ __('Name') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     {{ __('Email') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    {{ __('Verified') }}
+                                    {{ __('Verification') }}
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     {{ __('Role') }}
                                 </th>
-                                <th scope="col" class="px-6 py-3">
+                                {{-- <th scope="col" class="px-6 py-3">
                                     {{ __('Actions') }}
-                                </th>
+                                </th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -65,7 +65,8 @@
                                     </p>
                                 </td>
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <p>{{ $user->name }}</p>
+                                    <a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a>
+                                    {{-- <p>{{ $user->name }}</p> --}}
                                 </td>
                                 <td class="px-6 py-4">
                                     <p class="flex items-center">{{ $user->email }}
@@ -92,9 +93,8 @@
                                     <x-badge.user />
                                     @endif
                                 </td>
-                                <td class="px-6 py-4">
+                                {{-- <td class="px-6 py-4">
                                     <div class="flex space-x-3">
-                                        {{-- Action here --}}
                                         @if ($user->is_admin)
                                         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
                                             @csrf
@@ -144,7 +144,7 @@
                                             </x-action.red>
                                         </form>
                                     </div>
-                                </td>
+                                </td> --}}
                             </tr>
                             @empty
                             <tr class="bg-white dark:bg-gray-800">
