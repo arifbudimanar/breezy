@@ -88,7 +88,7 @@
     </div>
     @endif
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <div
+        {{-- <div
             class="h-10 text-xs sm:text-sm bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-gray-800 dark:text-gray-200">
             <p>
                 {{ __('Admin Mode.') }}
@@ -99,7 +99,7 @@
             <p class="ml-1 lg:hidden">
                 {{ __('For better experience, please use a desktop browser.') }}
             </p>
-        </div>
+        </div> --}}
         @include('layouts.admin-navigation')
 
         <!-- Page Heading -->

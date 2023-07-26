@@ -30,76 +30,55 @@
                         </x-button.primary>
                     </form>
                 </div>
-                {{-- Table User --}}
-                <div class="relative overflow-x-auto mt-6">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-6 sm:mb-0">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    {{ __('#') }}
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    {{ __('Name') }}
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    {{ __('Email') }}
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    {{ __('Verification') }}
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    {{ __('Role') }}
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($users as $user)
-                            <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-50 even:dark:bg-gray-700">
-                                <td scope="row"
-                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <p>
-                                        {{ $users->firstItem() + $loop->index }}
-                                    </p>
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <a href="{{ route('admin.users.show', $user) }}" class="hover:underline">{{
-                                        $user->name }}</a>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <p class="flex items-center">{{ $user->email }}
-                                        @if ($user->email_verified_at)
-                                        <x-badge.verified-email />
-                                        @endif
-                                    </p>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                <div class="gap-5 mt-6 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
+                    @forelse ($users as $user)
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                        <div>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <a href="{{ route('admin.users.show', $user) }}"
+                                        class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                        {{$user->name }}
+                                    </a>
                                     @if ($user->is_verified)
-                                    <p class="flex items-center">
+                                    <p class="ml-1 flex items-center">
                                         <x-badge.verified-account />
                                     </p>
                                     @else
-                                    <p class="flex items-center">
+                                    <p class="ml-1 flex items-center">
                                         <x-badge.unverified-account />
                                     </p>
                                     @endif
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    @if ($user->is_admin)
-                                    <x-badge.admin />
-                                    @else
-                                    <x-badge.user />
-                                    @endif
-                                </td>
-                            </tr>
-                            @empty
-                            <tr class="bg-white dark:bg-gray-800">
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                    {{ __('Data Not Found') }}
-                                </td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+                                </div>
+                                <div class="ml-auto">
+
+                                    @include('admin.users.partials.action')
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                {{ $user->email }}
+                                @if ($user->email_verified_at)
+                                <x-badge.verified-email />
+                                @endif
+                            </p>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                @if ($user->is_admin)
+                                <x-badge.admin />
+                                @else
+                                <x-badge.user />
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    @empty
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            {{ __('Data Not Found') }}
+                        </p>
+                    </div>
+
+                    @endforelse
+
                 </div>
                 {{-- Pagination --}}
                 @if ($users->hasPages())

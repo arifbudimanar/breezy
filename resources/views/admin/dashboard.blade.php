@@ -30,7 +30,7 @@
                 <x-card.description>
                     {{ __('This is summary of users.') }}
                 </x-card.description>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 mt-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 mt-6">
                     <x-subcard.dashboard>
                         <x-subcard.title>
                             {{ __("All Users") }}
