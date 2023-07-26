@@ -27,7 +27,7 @@
                             <div>{{ $user->id }}</div>
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
-                            <div class="w-48">Name</div>
+                            <div class="w-48">{{ __('Name') }}</div>
                             <div>{{ $user->name }}</div>
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">

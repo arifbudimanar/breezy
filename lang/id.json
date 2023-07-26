@@ -105,7 +105,7 @@
     "Delete": "Hapus",
     "Data Not Found": "Data Tidak Ditemukan",
     "Language": "Bahasa",
-    "User :name deleted successfully!": "User :name berhasil dihapus!",
+    "User :name deleted successfully!": "Pengguna :name berhasil dihapus!",
     "Error, :name account is not verified!": "Kesalahan, akun :name belum diverifikasi!",
     "Error, :name email is not verified!": "Kesalahan, surel :name belum diverifikasi!",
     ":name made admin successfully!": ":name berhasil dibuat admin!",
@@ -130,5 +130,9 @@
     "Verified Email": "Surel Terverifikasi",
     "Verified Account": "Akun Terverifikasi",
     "Created At": "Dibuat Pada",
-    "Updated At": "Diperbarui Pada"
+    "Updated At": "Diperbarui Pada",
+    "User Information": "Informasi Pengguna",
+    "Update user profile information and email address.": "Perbarui informasi profil pengguna dan alamat surel.",
+    "Manage user account, update user profile information and email address.": "Kelola akun pengguna, perbarui informasi profil pengguna dan alamat surel.",
+    "User :name updated successfully!": "Pengguna :name berhasil diperbarui!"
 }

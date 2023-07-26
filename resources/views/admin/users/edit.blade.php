@@ -9,10 +9,10 @@
         <div class="max-w-full mx-auto sm:px-6 lg:px-8 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("User Information") }}
+                    {{ __('User Information') }}
                 </x-card.title>
                 <x-card.description>
-                    {{ __("Update user profile information and email address.") }}
+                    {{ __('Update user profile information and email address.') }}
                 </x-card.description>
                 <div class="max-w-xl">
                     <form method="post" action="{{ route('admin.users.update', $user) }}" class="mt-6 space-y-6">
