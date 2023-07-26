@@ -136,5 +136,6 @@
     "Update user profile information and email address.": "Update user profile information and email address.",
     "Manage user account, update user profile information and email address.": "Manage user account, update user profile information and email address.",
     "User :name updated successfully!": "User :name updated successfully!",
-    "Edit": "Edit"
+    "Edit": "Edit",
+    "Home": "Home"
 }

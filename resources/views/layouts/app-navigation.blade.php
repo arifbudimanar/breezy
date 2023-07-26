@@ -109,6 +109,9 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('home')">
+                    {{ __('Home') }}
+                </x-responsive-nav-link>
                 @can('admin')
                 <x-responsive-nav-link :href="route('admin.dashboard')">
                     {{ __('Admin Dashboard') }}
