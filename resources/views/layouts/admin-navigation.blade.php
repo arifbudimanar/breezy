@@ -23,6 +23,8 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                @include('layouts.partials.language')
+                @include('layouts.partials.theme')
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
@@ -61,7 +63,6 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
-                @include('layouts.partials.language')
             </div>
 
             <!-- Hamburger -->
@@ -122,6 +123,7 @@
                 </form>
             </div>
         </div>
+        @include('layouts.partials.theme-responsive')
         @include('layouts.partials.language-responsive')
     </div>
 </nav>
