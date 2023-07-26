@@ -50,9 +50,6 @@
                                 <th scope="col" class="px-6 py-3">
                                     {{ __('Role') }}
                                 </th>
-                                {{-- <th scope="col" class="px-6 py-3">
-                                    {{ __('Actions') }}
-                                </th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -65,8 +62,8 @@
                                     </p>
                                 </td>
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a>
-                                    {{-- <p>{{ $user->name }}</p> --}}
+                                    <a href="{{ route('admin.users.show', $user) }}" class="hover:underline">{{
+                                        $user->name }}</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     <p class="flex items-center">{{ $user->email }}
@@ -93,58 +90,6 @@
                                     <x-badge.user />
                                     @endif
                                 </td>
-                                {{-- <td class="px-6 py-4">
-                                    <div class="flex space-x-3">
-                                        @if ($user->is_admin)
-                                        <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <x-action.red>
-                                                {{ __('Remove Admin') }}
-                                            </x-action.red>
-                                        </form>
-                                        @else
-                                        <form action="{{ route('admin.users.makeadmin', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <x-action.indigo>
-                                                {{ __('Make Admin') }}
-                                            </x-action.indigo>
-                                        </form>
-                                        @endif
-                                        @if ($user->is_verified)
-                                        <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <x-action.red>
-                                                {{ __('Unverify') }}
-                                            </x-action.red>
-                                        </form>
-                                        @else
-                                        <form action="{{ route('admin.users.verify', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <x-action.indigo>
-                                                {{ __('Verify') }}
-                                            </x-action.indigo>
-                                        </form>
-                                        @endif
-                                        <form action="{{ route('admin.users.resetpassword', $user) }}" method="Post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <x-action.indigo>
-                                                {{ __('Reset Password') }}
-                                            </x-action.indigo>
-                                        </form>
-                                        <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <x-action.red>
-                                                {{ __('Delete') }}
-                                            </x-action.red>
-                                        </form>
-                                    </div>
-                                </td> --}}
                             </tr>
                             @empty
                             <tr class="bg-white dark:bg-gray-800">
