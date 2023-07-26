@@ -71,7 +71,7 @@
     "You are receiving this email because we received a password reset request for your account.": "Anda menerima surel ini karena kami menerima permintan pengaturan ulang kata sandi untuk akun anda.",
     "You're logged in!": "Anda sudah masuk!",
     "Your email address is unverified.": "Alamat surel Anda belum diverifikasi.",
-    "User Dashboard": "Dasbor Pengguna",
+    "Your Dashboard": "Dasbor Anda",
     "Admin Dashboard": "Dasbor Admin",
     "You're logged in, :Name": "Anda sudah masuk, :Name",
     "You're logged in as Admin, :Name": "Anda sudah masuk sebagai Admin, :Name",
@@ -116,5 +116,9 @@
     ":name password reset successfully!": ":name berhasil diatur ulang kata sandi!",
     "Profile updated successfully.": "Profil berhasil diperbarui.",
     "Password updated successfully.": "Kata sandi berhasil diperbarui.",
-    "Your account is not verified!": "Akun anda belum diverifikasi!"
+    "Your account is not verified!": "Akun anda belum diverifikasi!",
+    "Dark": "Gelap",
+    "Light": "Terang",
+    "Auto": "Otomatis",
+    "Theme": "Tema"
 }

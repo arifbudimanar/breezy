@@ -71,7 +71,7 @@
     "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
     "You're logged in!": "You're logged in!",
     "Your email address is unverified.": "Your email address is unverified.",
-    "User Dashboard": "User Dashboard",
+    "Your Dashboard": "Your Dashboard",
     "Admin Dashboard": "Admin Dashboard",
     "You're logged in, :Name": "You're logged in, :Name",
     "You're logged in as Admin, :Name": "You're logged in as Admin, :Name",
@@ -116,5 +116,9 @@
     ":name password reset successfully!": ":name password reset successfully!",
     "Profile updated successfully.": "Profile updated successfully.",
     "Password updated successfully.": "Password updated successfully.",
-    "Your account is not verified!": "Your account is not verified!"
+    "Your account is not verified!": "Your account is not verified!",
+    "Dark": "Dark",
+    "Light": "Light",
+    "Auto": "Auto",
+    "Theme": "Theme"
 }
