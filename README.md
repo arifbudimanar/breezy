@@ -1,5 +1,5 @@
 # Breezy
-This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account status, and verified email addresses.
+This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account, and verified email addresses.
 ## Screenshots
 ### User Dashboard
 ![User Dashboard](<screenshot/UserDashboard-ID.png>)
@@ -12,8 +12,10 @@ This is a Laravel application built to showcase the usage of Laravel Breeze with
   - Indonesian
   - English
 - UI
-  - Dark Theme
-  - Light Theme
+  - Theme
+    - Dark
+    - Light
+    - Auto
   - Responsive
   - Floating Notification
   - Custom Pagination Style
