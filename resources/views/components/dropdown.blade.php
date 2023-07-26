@@ -19,7 +19,7 @@ case '48':
 $width = 'w-48';
 break;
 case 'auto':
-$width = 'w-full';
+$width = 'w-auto';
 break;
 }
 @endphp
