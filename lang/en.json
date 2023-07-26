@@ -129,10 +129,12 @@
     "User": "User",
     "Verified Email": "Verified Email",
     "Verified Account": "Verified Account",
+    "Verify Account": "Verify Account",
     "Created At": "Created At",
     "Updated At": "Updated At",
     "User Information": "User Information",
     "Update user profile information and email address.": "Update user profile information and email address.",
     "Manage user account, update user profile information and email address.": "Manage user account, update user profile information and email address.",
-    "User :name updated successfully!": "User :name updated successfully!"
+    "User :name updated successfully!": "User :name updated successfully!",
+    "Edit": "Edit"
 }

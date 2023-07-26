@@ -129,10 +129,12 @@
     "User": "Pengguna",
     "Verified Email": "Surel Terverifikasi",
     "Verified Account": "Akun Terverifikasi",
+    "Verify Account": "Verifikasi Akun",
     "Created At": "Dibuat Pada",
     "Updated At": "Diperbarui Pada",
     "User Information": "Informasi Pengguna",
     "Update user profile information and email address.": "Perbarui informasi profil pengguna dan alamat surel.",
     "Manage user account, update user profile information and email address.": "Kelola akun pengguna, perbarui informasi profil pengguna dan alamat surel.",
-    "User :name updated successfully!": "Pengguna :name berhasil diperbarui!"
+    "User :name updated successfully!": "Pengguna :name berhasil diperbarui!",
+    "Edit": "Ubah"
 }
