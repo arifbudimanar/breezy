@@ -44,6 +44,9 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('home')">
+                            {{ __('Home') }}
+                        </x-dropdown-link>
                         @can('admin')
                         <x-dropdown-link :href="route('admin.dashboard')">
                             {{ __('Admin Dashboard') }}
