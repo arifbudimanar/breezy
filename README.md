@@ -1,5 +1,10 @@
 # Breezy
 This is a Laravel application built to showcase the usage of Laravel Breeze with additional middleware for admin access, verified account, and verified email addresses.
+## Built With
+- [Laravel 10](https://laravel.com/)
+- [Laravel Breeze](https://laravel.com/docs/10.x/starter-kits#laravel-breeze)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Alpine.js](https://alpinejs.dev/)
 ## Screenshots
 ### User Dashboard
 ![User Dashboard](<screenshot/UserDashboard-ID.png>)
