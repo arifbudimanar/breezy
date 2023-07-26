@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex">
-            {{ $user->name }}
+            {{ __('Detail User') }}
         </h2>
     </x-slot>
 
@@ -10,17 +10,25 @@
             <x-card.app>
                 <div class="flex">
                     <x-card.title>
-                        {{ __('Detail User') }}
+                        {{ __('User Information') }}
                     </x-card.title>
                     <div class="ml-auto">
                         @include('admin.users.partials.action')
                     </div>
                 </div>
                 <x-card.description>
+                    {{ __('Manage user account, update user profile information and email address.') }}
+                </x-card.description>
+
+                <div class="mt-6">
                     <div class="space-y-3 sm:space-y-1 min-w-max">
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
                             <div class="w-48">ID</div>
                             <div>{{ $user->id }}</div>
+                        </div>
+                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                            <div class="w-48">Name</div>
+                            <div>{{ $user->name }}</div>
                         </div>
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
                             <div class="w-48">{{ __('Email') }}</div>
@@ -61,7 +69,7 @@
                             <div>{{ $user->updated_at }} - {{ $user->updated_at->diffForHumans() }}</div>
                         </div>
                     </div>
-                </x-card.description>
+                </div>
             </x-card.app>
         </div>
     </div>

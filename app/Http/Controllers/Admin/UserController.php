@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Redirect;
 use Response;
 
 class UserController extends Controller
@@ -51,7 +52,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
-        return back()->with('success', __('User :name updated successfully!', ['name' => $user->name]));
+        return redirect()->route('admin.users.show', $user)->with('success', __('User :name updated successfully!', ['name' => $user->name]));
     }
 
     public function destroy(User $user): RedirectResponse

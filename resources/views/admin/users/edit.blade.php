@@ -12,7 +12,9 @@
                     {{ __("User Information") }}
                 </x-card.title>
                 <x-card.description>
-                    {{ __("Update user account's profile information and email address.") }}
+                    {{ __("Update user profile information and email address.") }}
+                </x-card.description>
+                <div class="max-w-xl">
                     <form method="post" action="{{ route('admin.users.update', $user) }}" class="mt-6 space-y-6">
                         @csrf
                         @method('patch')
@@ -35,7 +37,7 @@
                             <x-button.primary>{{ __('Save') }}</x-button.primary>
                         </div>
                     </form>
-                </x-card.description>
+                </div>
             </x-card.app>
         </div>
     </div>
