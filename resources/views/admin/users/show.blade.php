@@ -22,38 +22,38 @@
                 <x-card.description>
                     {{ __('Manage user account, update user profile information and email address.') }}
                 </x-card.description>
-                <div class="mt-6">
-                    <div class="space-y-3 sm:space-y-1 min-w-max">
+                <div class="mt-6 overflow-clip">
+                    <div class="space-y-3 sm:space-y-1 min-w-full">
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">ID</div>
-                            <div>{{ $user->id }}</div>
+                            <p class="w-36">ID</p>
+                            <p>{{ $user->id }}</p>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Name') }}</div>
-                            <div>{{ $user->name }}</div>
+                            <p class="w-36">{{ __('Name') }}</p>
+                            <p>{{ $user->name }}</p>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Email') }}</div>
-                            <div>{{ $user->email }}</div>
+                            <p class="w-36">{{ __('Email') }}</p>
+                            <p class="truncate break-normal hover:break-all">{{ $user->email }}</p>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Verified Email') }}</div>
-                            <div>{{ $user->email_verified_at ? __('Yes') : __('No') }}</div>
+                            <p class="w-36">{{ __('Verified Email') }}</p>
+                            <p>{{ $user->email_verified_at ? __('Yes') : __('No') }}</p>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Verified Account') }}</div>
+                            <p class="w-36">{{ __('Verified Account') }}</p>
                             @if ($user->is_verified)
-                            <p class="flex items-center">
+                            <div class="flex items-center">
                                 <x-badge.verified-account />
-                            </p>
+                            </div>
                             @else
-                            <p class="flex items-center">
+                            <div class="flex items-center">
                                 <x-badge.unverified-account />
-                            </p>
+                            </div>
                             @endif
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Role') }}</div>
+                            <p class="w-36">{{ __('Role') }}</p>
                             <div>
                                 @if ($user->is_admin)
                                 <x-badge.admin />
@@ -63,12 +63,18 @@
                             </div>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Created At') }}</div>
-                            <div>{{ $user->created_at }} - {{ $user->created_at->diffForHumans() }}</div>
+                            <p class="w-36">{{ __('Created At') }}</p>
+                            <div>
+                                <p>{{ $user->created_at }}</p>
+                                <p>{{ $user->created_at->diffForHumans() }}</p>
+                            </div>
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
-                            <div class="w-48">{{ __('Updated At') }}</div>
-                            <div>{{ $user->updated_at }} - {{ $user->updated_at->diffForHumans() }}</div>
+                            <p class="w-36">{{ __('Updated At') }}</p>
+                            <div>
+                                <p>{{ $user->updated_at }}</p>
+                                <p>{{ $user->updated_at->diffForHumans() }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
