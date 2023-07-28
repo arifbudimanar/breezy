@@ -87,15 +87,11 @@
         </div>
     </div>
     @endif
-    <div class="min-h-screen w-full bg-gray-100 dark:bg-gray-900">
+    <div class="w-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
         @include('layouts.admin-navigation')
-        <div class="flex min-h-full">
-            {{-- Sidebar --}}
-            <div class="hidden sm:flex h-auto border-r border-gray-100 dark:border-gray-700">
-                @include('layouts.sidebar')
-            </div>
-            <main class="w-full min-h-screen">
-                <!-- Page Heading -->
+        <div class="flex flex-grow">
+            @include('layouts.sidebar')
+            <main class="w-full">
                 @if (isset($header))
                 <header class="bg-white dark:bg-gray-800">
                     <div class="w-full mx-auto py-6 px-4 sm:px-6">
@@ -103,7 +99,6 @@
                     </div>
                 </header>
                 @endif
-                <!-- Page Content -->
                 {{ $slot }}
             </main>
         </div>
