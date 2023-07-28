@@ -24,7 +24,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
+<body class="font-sans antialiased min-h-screen bg-gray-100 dark:bg-gray-900">
     @if (session('success'))
     <div class="fixed z-30 right-5 bottom-5" x-data="{ show: true }" x-show="show" x-transition
         x-init="setTimeout(() => show = false, 8000)">
@@ -87,34 +87,26 @@
         </div>
     </div>
     @endif
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        {{-- <div
-            class="h-10 text-xs sm:text-sm bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-gray-800 dark:text-gray-200">
-            <p>
-                {{ __('Admin Mode.') }}
-            </p>
-            <p class="ml-1 hidden lg:block">
-                {{ __('Please carefully review your actions, some of them are irreversible.') }}
-            </p>
-            <p class="ml-1 lg:hidden">
-                {{ __('For better experience, please use a desktop browser.') }}
-            </p>
-        </div> --}}
+    <div class="min-h-screen w-full bg-gray-100 dark:bg-gray-900">
         @include('layouts.admin-navigation')
-
-        <!-- Page Heading -->
-        @if (isset($header))
-        <header class="bg-white dark:bg-gray-800 shadow">
-            <div class="max-w-full mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
+        <div class="flex min-h-full">
+            {{-- Sidebar --}}
+            <div class="hidden sm:flex h-auto border-r border-gray-100 dark:border-gray-700">
+                @include('layouts.sidebar')
             </div>
-        </header>
-        @endif
-
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+            <main class="w-full min-h-screen">
+                <!-- Page Heading -->
+                @if (isset($header))
+                <header class="bg-white dark:bg-gray-800">
+                    <div class="max-w-full mx-auto py-6 px-4 sm:px-6">
+                        {{ $header }}
+                    </div>
+                </header>
+                @endif
+                <!-- Page Content -->
+                {{ $slot }}
+            </main>
+        </div>
     </div>
 </body>
 
