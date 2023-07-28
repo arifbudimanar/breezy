@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex">
-            {{ __('Detail User') }}
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            <a href="{{ route('admin.users.index') }}" class="hover:underline">{{ __('User') }}</a> / {{ $user->name }}
         </h2>
     </x-slot>
 

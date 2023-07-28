@@ -1,7 +1,10 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Edit User') }}
+            <a href="{{ route('admin.users.index') }}" class="hover:underline">{{ __('User') }}</a>
+            / <a href="{{ route('admin.users.show', $user) }}" class="hover:underline">
+                {{ $user->name }}
+            </a> / {{ __('Edit') }}
         </h2>
     </x-slot>
 

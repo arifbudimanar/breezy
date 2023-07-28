@@ -37,7 +37,7 @@
                             <div class="flex justify-between">
                                 <div class="flex items-center">
                                     <a href="{{ route('admin.users.show', $user) }}"
-                                        class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                        class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:underline">
                                         {{$user->name }}
                                     </a>
                                     @if ($user->is_verified)
