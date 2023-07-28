@@ -21,23 +21,23 @@
                 </x-card.description>
                 <div class="mt-6">
                     <div class="space-y-3 sm:space-y-1 min-w-max">
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">ID</div>
                             <div>{{ $user->id }}</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Name') }}</div>
                             <div>{{ $user->name }}</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Email') }}</div>
                             <div>{{ $user->email }}</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Verified Email') }}</div>
                             <div>{{ $user->email_verified_at ? __('Yes') : __('No') }}</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Verified Account') }}</div>
                             @if ($user->is_verified)
                             <p class="flex items-center">
@@ -49,7 +49,7 @@
                             </p>
                             @endif
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Role') }}</div>
                             <div>
                                 @if ($user->is_admin)
@@ -59,11 +59,11 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Created At') }}</div>
                             <div>{{ $user->created_at }} - {{ $user->created_at->diffForHumans() }}</div>
                         </div>
-                        <div class="text-gray-600 dark:text-gray-400 sm:flex">
+                        <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <div class="w-48">{{ __('Updated At') }}</div>
                             <div>{{ $user->updated_at }} - {{ $user->updated_at->diffForHumans() }}</div>
                         </div>

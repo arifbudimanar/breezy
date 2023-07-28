@@ -19,11 +19,11 @@ class UserController extends Controller
                     ->orWhere('email', 'like', '%' . $search . '%');
             })
                 ->orderBy('name')
-                ->paginate(15)
+                ->paginate(12)
                 ->withQueryString();
         } else {
             $users = User::orderBy('name')
-                ->paginate(15);
+                ->paginate(12);
         }
         return view('admin.users.index', compact('users'));
     }

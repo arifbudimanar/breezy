@@ -11,9 +11,11 @@
     </x-slot>
 
     <x-slot name="content">
+        @unless (request()->routeIs('admin.users.edit'))
         <x-dropdown-link :href="route('admin.users.edit', $user)">
             {{ __('Edit') }}
         </x-dropdown-link>
+        @endunless
         @if ($user->is_admin == true)
         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
             @csrf

@@ -8,9 +8,14 @@
     <div class="sm:py-12">
         <div class="max-w-full mx-auto sm:px-6 lg:px-8 sm:space-y-6">
             <x-card.app>
-                <x-card.title>
-                    {{ __('User Information') }}
-                </x-card.title>
+                <div class="flex">
+                    <x-card.title>
+                        {{ __('User Information') }}
+                    </x-card.title>
+                    <div class="ml-auto">
+                        @include('admin.users.partials.action')
+                    </div>
+                </div>
                 <x-card.description>
                     {{ __('Update user profile information and email address.') }}
                 </x-card.description>
