@@ -19,6 +19,39 @@
         [x-cloak] {
             display: none !important;
         }
+
+        @media (prefers-color-scheme: dark) {
+            ::-webkit-scrollbar {
+                width: 5px;
+                background-color: #111827;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: #4f46e5;
+                border-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #6366d0;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            ::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+                background-color: #f5f5f5;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: #4f46e5;
+                border-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #6366d0;
+            }
+        }
     </style>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
