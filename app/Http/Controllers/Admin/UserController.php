@@ -50,13 +50,13 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
-        return redirect()->route('admin.users.show', $user)->with('success', __('User :name updated successfully!', ['name' => $user->name]));
+        return back()->with('success', __('User :name updated successfully!', ['name' => $user->name]));
     }
 
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
-        return back()->with('success', __('User :name deleted successfully!', ['name' => $user->name]));
+        return redirect()->route('admin.users.index')->with('success', __('User :name deleted successfully!', ['name' => $user->name]));
     }
 
     public function makeAdmin(User $user): RedirectResponse
