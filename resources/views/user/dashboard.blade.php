@@ -33,14 +33,14 @@
                     {{ __('This is summary of your content.') }}
                 </x-card.description>
                 <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 mt-6">
-                    <x-subcard.dashboard>
+                    <x-subcard.app>
                         <x-subcard.title>
                             {{ __("Inbox") }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ __('90') }}
                         </x-subcard.value>
-                    </x-subcard.dashboard>
+                    </x-subcard.app>
                 </div>
             </x-card.app>
             @endif

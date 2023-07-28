@@ -32,8 +32,8 @@
                 </div>
                 <div class="gap-5 mt-6 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
                     @forelse ($users as $user)
-                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-                        <div>
+                    <x-subcard.app>
+                        <x-subcard.title>
                             <div class="flex justify-between">
                                 <div class="flex items-center">
                                     <a href="{{ route('admin.users.show', $user) }}"
@@ -51,34 +51,31 @@
                                     @endif
                                 </div>
                                 <div class="ml-auto">
-
                                     @include('admin.users.partials.action')
                                 </div>
                             </div>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                                {{ $user->email }}
-                                @if ($user->email_verified_at)
-                                <x-badge.verified-email />
-                                @endif
-                            </p>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                                @if ($user->is_admin)
-                                <x-badge.admin />
-                                @else
-                                <x-badge.user />
-                                @endif
-                            </p>
-                        </div>
-                    </div>
+                        </x-subcard.title>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                            {{ $user->email }}
+                            @if ($user->email_verified_at)
+                            <x-badge.verified-email />
+                            @endif
+                        </p>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                            @if ($user->is_admin)
+                            <x-badge.admin />
+                            @else
+                            <x-badge.user />
+                            @endif
+                        </p>
+                    </x-subcard.app>
                     @empty
                     <div>
                         <p class="text-gray-500 dark:text-gray-400">
                             {{ __('Data Not Found') }}
                         </p>
                     </div>
-
                     @endforelse
-
                 </div>
                 {{-- Pagination --}}
                 @if ($users->hasPages())

@@ -7,8 +7,6 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
-use Redirect;
-use Response;
 
 class UserController extends Controller
 {
@@ -21,11 +19,11 @@ class UserController extends Controller
                     ->orWhere('email', 'like', '%' . $search . '%');
             })
                 ->orderBy('name')
-                ->paginate(12)
+                ->paginate(15)
                 ->withQueryString();
         } else {
             $users = User::orderBy('name')
-                ->paginate(12);
+                ->paginate(15);
         }
         return view('admin.users.index', compact('users'));
     }

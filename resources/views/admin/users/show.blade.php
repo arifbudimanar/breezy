@@ -19,7 +19,6 @@
                 <x-card.description>
                     {{ __('Manage user account, update user profile information and email address.') }}
                 </x-card.description>
-
                 <div class="mt-6">
                     <div class="space-y-3 sm:space-y-1 min-w-max">
                         <div class="text-gray-600 dark:text-gray-400 sm:flex">
