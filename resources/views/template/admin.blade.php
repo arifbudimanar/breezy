@@ -9,10 +9,10 @@
         <div class="max-w-full mx-auto sm:px-6 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("Title Card Here") }}
+                    {{ __('Title Card Here') }}
                 </x-card.title>
                 <x-card.description>
-                    {{ __('Description card here.') }}
+                    {{ __('Description Card Here') }}
                 </x-card.description>
             </x-card.app>
         </div>

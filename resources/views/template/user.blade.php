@@ -6,13 +6,13 @@
     </x-slot>
 
     <div class="sm:py-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 sm:space-y-6">
+        <div class="max-w-7xl mx-auto sm:px-6 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("Title Card Here") }}
+                    {{ __('Title Card Here') }}
                 </x-card.title>
                 <x-card.description>
-                    {{ __('Description card here.') }}
+                    {{ __('Description Card Here') }}
                 </x-card.description>
             </x-card.app>
         </div>
