@@ -138,5 +138,10 @@
     "User :name updated successfully!": "User :name updated successfully!",
     "Edit": "Edit",
     "Home": "Home",
-    "View": "View"
+    "View": "View",
+    "Create": "Create",
+    "Create User": "Create User",
+    "Create a new user account.": "Create a new user account.",
+    "Please complete your profile with valid information.": "Please complete your profile with valid information.",
+    "Complete Your Profile": "Complete Your Profile"
 }

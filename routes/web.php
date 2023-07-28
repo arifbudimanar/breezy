@@ -40,6 +40,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'verified_e
     Route::resource('users', AdminUserController::class)
         ->only([
             'index',
+            'create',
+            'store',
             'show',
             'edit',
             'update',
@@ -47,6 +49,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'verified_e
         ])
         ->names([
             'index' => 'users.index',
+            'create' => 'users.create',
+            'store' => 'users.store',
             'show' => 'users.show',
             'edit' => 'users.edit',
             'update' => 'users.update',

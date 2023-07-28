@@ -138,5 +138,10 @@
     "User :name updated successfully!": "Pengguna :name berhasil diperbarui!",
     "Edit": "Ubah",
     "Home": "Beranda",
-    "View": "Lihat"
+    "View": "Lihat",
+    "Create": "Buat",
+    "Create User": "Buat Pengguna",
+    "Create a new user account.": "Buat akun pengguna baru.",
+    "Please complete your profile with valid information.": "Harap lengkapi profil Anda dengan informasi yang valid.",
+    "Complete Your Profile": "Lengkapi Profil Anda"
 }

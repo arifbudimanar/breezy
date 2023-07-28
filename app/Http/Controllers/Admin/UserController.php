@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
@@ -30,6 +32,24 @@ class UserController extends Controller
     public function show(User $user): View
     {
         return view('admin.users.show', compact('user'));
+    }
+    public function create(Request $request): View
+    {
+        return view('admin.users.create');
+    }
+    public function store(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|unique:users,email',
+            'password' => ['required', Rules\Password::defaults()],
+        ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect()->route('admin.users.index')->with('success', __('User :name created successfully!', ['name' => $user->name]));
     }
 
     public function edit(User $user): View

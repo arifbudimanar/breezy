@@ -22,7 +22,7 @@
                 <x-card.description>
                     {{ __('Manage user account, update user profile information and email address.') }}
                 </x-card.description>
-                <div class="mt-6 overflow-clip">
+                <div class="mt-6">
                     <div class="space-y-3 sm:space-y-1 min-w-full">
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <p class="w-36">ID</p>

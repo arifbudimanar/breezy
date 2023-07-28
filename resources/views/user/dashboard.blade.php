@@ -15,7 +15,22 @@
                     {{ __('Welcome to your dashboard. This is where your content will be summarized.') }}
                 </x-card.description>
             </x-card.app>
-            @if (Auth::user()->is_verified == false)
+            @if (!Auth::user()->completedProfile())
+            <x-card.app>
+                <x-card.title>
+                    {{ __('Complete Your Profile') }}
+                </x-card.title>
+                <x-card.description>
+                    {{ __('Please complete your profile with valid information.') }}
+                </x-card.description>
+                <div class="mt-6">
+                    <x-button.link href="{{ route('user.profile.edit')}}">
+                        {{ __('Profile') }}
+                    </x-button.link>
+                </div>
+            </x-card.app>
+            @endif
+            @if (!Auth::user()->isVerified())
             <x-card.app>
                 <x-card.title>
                     {{ __('Your account is not verified') }}
