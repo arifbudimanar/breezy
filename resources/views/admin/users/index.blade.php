@@ -8,9 +8,18 @@
     <div class="sm:py-6">
         <div class="max-w-full mx-auto sm:px-6 sm:space-y-6">
             <x-card.app>
-                <x-card.title>
-                    {{ __("All Users") }}
-                </x-card.title>
+                <div class="flex">
+                    <x-card.title>
+                        {{ __("All Users") }}
+                    </x-card.title>
+                    <div class="ml-auto">
+                        <x-button.primary>
+                            <a href="{{ route('admin.users.index') }}">
+                                {{ __('Create') }}
+                            </a>
+                        </x-button.primary>
+                    </div>
+                </div>
                 @if (request('search'))
                 <x-card.description>
                     {{ __("Search results for : ") }}{{ request('search') }}
@@ -25,9 +34,9 @@
                     <form class="flex items-center gap-2">
                         <x-text-input id="search" name="search" type="text" class="w-full"
                             placeholder="{{ __('Name or email') }}" value="{{ request('search') }}" autofocus />
-                        <x-button.primary type="submit">
+                        <x-button.secondary type="submit">
                             {{ __('Search') }}
-                        </x-button.primary>
+                        </x-button.secondary>
                     </form>
                 </div>
                 <div class="gap-5 mt-6 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
