@@ -16,6 +16,7 @@
             {{ __('Edit') }}
         </x-dropdown-link>
         @endunless
+        @if ($user->is_verified==true)
         @if ($user->is_admin == true)
         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
             @csrf
@@ -34,6 +35,7 @@
                 {{ __('Make Admin') }}
             </x-dropdown-link>
         </form>
+        @endif
         @endif
         @if ($user->is_verified)
         <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
