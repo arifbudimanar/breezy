@@ -46,6 +46,7 @@ class UserController extends Controller
         if ($user->email !== $request->email) {
             $user->email_verified_at = null;
         }
+        $user->timestamps = false;
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -61,57 +62,62 @@ class UserController extends Controller
 
     public function makeAdmin(User $user): RedirectResponse
     {
-        if ($user->email_verified_at == null) {
+        if (!$user->emailVerified()) {
             return back()->with('warning', __('Error, :name email is not verified!', ['name' => $user->name]));
         }
-        if ($user->is_verified == 0) {
+        if (!$user->isVerified()) {
             return back()->with('warning', __('Error, :name account is not verified!', ['name' => $user->name]));
         }
         $user->timestamps = false;
-        $user->is_admin = 1;
-        $user->save();
+        $user->update([
+            'is_admin' => true,
+        ]);
         return back()->with('success', __(':name made admin successfully!', ['name' => $user->name]));
     }
 
     public function removeAdmin(User $user): RedirectResponse
     {
         $user->timestamps = false;
-        $user->is_admin = 0;
-        $user->save();
+        $user->update([
+            'is_admin' => false,
+        ]);
         return back()->with('success', __(':name remove admin successfully!', ['name' => $user->name]));
     }
 
     public function verify(User $user): RedirectResponse
     {
-        if ($user->email_verified_at == null) {
+        if (!$user->emailVerified()) {
             return back()->with('warning', 'Error, ' . $user->name . ' email is not verified!');
         }
         $user->timestamps = false;
-        $user->is_verified = 1;
-        $user->save();
+        $user->update([
+            'is_verified' => true,
+        ]);
         return back()->with('success', __(':name verified successfully!', ['name' => $user->name]));
     }
 
     public function unverify(User $user): RedirectResponse
     {
-        if ($user->is_admin) {
-            $user->timestamps = false;
-            $user->is_admin = 0;
-            $user->is_verified = 0;
-            $user->save();
+        $user->timestamps = false;
+        if ($user->isAdmin()) {
+            $user->update([
+                'is_admin' => false,
+                'is_verified' => false,
+            ]);
             return back()->with('success', __(':name remove admin and unverified successfully!', ['name' => $user->name]));
         }
-        $user->timestamps = false;
-        $user->is_verified = 0;
-        $user->save();
+        $user->update([
+            'is_verified' => false,
+        ]);
         return back()->with('success', __(':name unverified successfully!', ['name' => $user->name]));
     }
 
     public function resetPassword(User $user): RedirectResponse
     {
         $user->timestamps = false;
-        $user->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
-        $user->save();
+        $user->update([
+            'password' => bcrypt('password'),
+        ]);
         return back()->with('success', __(':name password reset successfully!', ['name' => $user->name]));
     }
 }

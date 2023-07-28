@@ -27,7 +27,7 @@
                         <button
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->first_name }}</div>
-                            @if (Auth::user()->is_verified)
+                            @if (Auth::user()->isVerified())
                             <div class="ml-1 flex items-center">
                                 <x-badge.verified-account />
                             </div>
@@ -99,7 +99,7 @@
                 <div class="flex items-center">
                     <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}
                     </div>
-                    @if (Auth::user()->is_verified)
+                    @if (Auth::user()->isVerified())
                     <div class="ml-1 flex items-center">
                         <x-badge.verified-account />
                     </div>

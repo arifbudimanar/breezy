@@ -11,13 +11,18 @@
     </x-slot>
 
     <x-slot name="content">
+        @if (request()->routeIs('admin.users.index'))
+        <x-dropdown-link :href="route('admin.users.show', $user)">
+            {{ __('View') }}
+        </x-dropdown-link>
+        @endif
         @unless (request()->routeIs('admin.users.edit'))
         <x-dropdown-link :href="route('admin.users.edit', $user)">
             {{ __('Edit') }}
         </x-dropdown-link>
         @endunless
-        @if ($user->is_verified==true)
-        @if ($user->is_admin == true)
+        @if ($user->isVerified())
+        @if ($user->isAdmin())
         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
             @csrf
             @method('PATCH')
@@ -37,7 +42,7 @@
         </form>
         @endif
         @endif
-        @if ($user->is_verified)
+        @if ($user->isVerified())
         <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
             @csrf
             @method('PATCH')

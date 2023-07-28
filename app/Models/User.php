@@ -48,9 +48,22 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed'
     ];
 
-    //make firstname from name
     public function getFirstNameAttribute(): string
     {
         return explode(' ', $this->name)[0];
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->is_admin == true;
+    }
+    public function isVerified(): bool
+    {
+        return $this->is_verified == true;
+    }
+    //verified email
+    public function emailVerified(): bool
+    {
+        return $this->email_verified_at !== null;
     }
 }
