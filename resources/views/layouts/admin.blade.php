@@ -24,7 +24,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased min-h-screen bg-gray-100 dark:bg-gray-900">
+<body
+    class="font-sans antialiased min-h-screen bg-gray-100 dark:bg-gray-900 selection:bg-indigo-100 dark:selection:bg-indigo-800">
     @if (session('success'))
     <div class="fixed z-30 right-5 bottom-5" x-data="{ show: true }" x-show="show" x-transition
         x-init="setTimeout(() => show = false, 8000)">
