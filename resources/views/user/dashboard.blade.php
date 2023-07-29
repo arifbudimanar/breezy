@@ -15,7 +15,7 @@
                     {{ __('Welcome to your dashboard. This is where your content will be summarized.') }}
                 </x-card.description>
             </x-card.app>
-            @if (!Auth::user()->completedProfile())
+            @if (!Auth::user()->isCompletedProfile())
             <x-card.app>
                 <x-card.title>
                     {{ __('Complete Your Profile') }}
@@ -30,7 +30,7 @@
                 </div>
             </x-card.app>
             @endif
-            @if (!Auth::user()->isVerified())
+            @if (!Auth::user()->isUserVerified())
             <x-card.app>
                 <x-card.title>
                     {{ __('Your account is not verified') }}

@@ -21,7 +21,7 @@
             {{ __('Edit') }}
         </x-dropdown-link>
         @endunless
-        @if ($user->isVerified())
+        @if ($user->isUserVerified())
         @if ($user->isAdmin())
         <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
             @csrf
@@ -42,7 +42,7 @@
         </form>
         @endif
         @endif
-        @if ($user->isVerified())
+        @if ($user->isUserVerified())
         <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
             @csrf
             @method('PATCH')

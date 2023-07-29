@@ -78,7 +78,7 @@ class UserController extends Controller
     }
     public function makeAdmin(User $user): RedirectResponse
     {
-        if (!$user->emailVerified()) {
+        if (!$user->isEmailVerified()) {
             return back()->with('warning', __('Error, :name email is not verified!', ['name' => $user->name]));
         }
         if (!$user->isVerified()) {
@@ -100,7 +100,7 @@ class UserController extends Controller
     }
     public function verify(User $user): RedirectResponse
     {
-        if (!$user->emailVerified()) {
+        if (!$user->isEmailVerified()) {
             return back()->with('warning', 'Error, ' . $user->name . ' email is not verified!');
         }
         $user->timestamps = false;
