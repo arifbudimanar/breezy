@@ -33,7 +33,7 @@ class UserController extends Controller
     {
         return view('admin.users.show', compact('user'));
     }
-    public function create(Request $request): View
+    public function create(): View
     {
         return view('admin.users.create');
     }
@@ -51,12 +51,10 @@ class UserController extends Controller
         ]);
         return redirect()->route('admin.users.index')->with('success', __('User :name created successfully!', ['name' => $user->name]));
     }
-
     public function edit(User $user): View
     {
         return view('admin.users.edit', compact('user'));
     }
-
     public function update(User $user, Request $request): RedirectResponse
     {
         $request->validate([
@@ -73,13 +71,11 @@ class UserController extends Controller
         ]);
         return back()->with('success', __('User :name updated successfully!', ['name' => $user->name]));
     }
-
     public function destroy(User $user): RedirectResponse
     {
         $user->delete();
         return redirect()->route('admin.users.index')->with('success', __('User :name deleted successfully!', ['name' => $user->name]));
     }
-
     public function makeAdmin(User $user): RedirectResponse
     {
         if (!$user->emailVerified()) {
@@ -94,7 +90,6 @@ class UserController extends Controller
         ]);
         return back()->with('success', __(':name made admin successfully!', ['name' => $user->name]));
     }
-
     public function removeAdmin(User $user): RedirectResponse
     {
         $user->timestamps = false;
@@ -103,7 +98,6 @@ class UserController extends Controller
         ]);
         return back()->with('success', __(':name remove admin successfully!', ['name' => $user->name]));
     }
-
     public function verify(User $user): RedirectResponse
     {
         if (!$user->emailVerified()) {
@@ -115,7 +109,6 @@ class UserController extends Controller
         ]);
         return back()->with('success', __(':name verified successfully!', ['name' => $user->name]));
     }
-
     public function unverify(User $user): RedirectResponse
     {
         $user->timestamps = false;
@@ -131,7 +124,6 @@ class UserController extends Controller
         ]);
         return back()->with('success', __(':name unverified successfully!', ['name' => $user->name]));
     }
-
     public function resetPassword(User $user): RedirectResponse
     {
         $user->timestamps = false;
