@@ -33,6 +33,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return explode(' ', $this->name)[0];
     }
+    public function getLastNameAttribute(): string
+    {
+        $name = explode(' ',  $this->name);
+        return end($name);
+    }
     public function isAdmin(): bool
     {
         return $this->is_admin == true;
