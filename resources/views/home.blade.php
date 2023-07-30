@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("Home") }}
+                    {{ __("Card Title") }}
                 </x-card.title>
                 <x-card.description>
-                    {{ __('Welcome to your dashboard. This is where your content will be summarized.') }}
+                    {{ __('Card Description') }}
                 </x-card.description>
             </x-card.app>
         </div>
