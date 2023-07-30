@@ -24,9 +24,9 @@
                     {{ __('Please complete your profile with valid information.') }}
                 </x-card.description>
                 <div class="mt-6">
-                    <x-button.link href="{{ route('user.profile.edit')}}">
+                    <x-button.link-primary href="{{ route('user.profile.edit')}}">
                         {{ __('Profile') }}
-                    </x-button.link>
+                    </x-button.link-primary>
                 </div>
             </x-card.app>
             @endif

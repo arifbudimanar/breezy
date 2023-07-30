@@ -13,9 +13,9 @@
                         {{ __("All Users") }}
                     </x-card.title>
                     <div class="ml-auto">
-                        <x-button.link href="{{ route('admin.users.create')}}">
+                        <x-button.link-primary href="{{ route('admin.users.create')}}">
                             {{ __('Create') }}
-                        </x-button.link>
+                        </x-button.link-primary>
                     </div>
                 </div>
                 @if (request('search'))

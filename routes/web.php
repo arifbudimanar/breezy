@@ -18,9 +18,13 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('home');
+
 Route::get('/lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 Route::prefix('user')->name('user.')->middleware(['auth'])->group(function () {
