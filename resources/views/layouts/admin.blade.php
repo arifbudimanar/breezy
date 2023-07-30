@@ -124,7 +124,7 @@
     <div class="w-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
         @include('layouts.admin-navigation')
         <div class="flex flex-grow">
-            @include('layouts.sidebar')
+            @include('layouts.admin-sidebar')
             <main class="w-full">
                 @if (isset($header))
                 <header class="bg-white dark:bg-gray-800">
