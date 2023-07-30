@@ -11,11 +11,11 @@
     </x-slot>
 
     <x-slot name="content">
-        @if (request()->routeIs('admin.users.index'))
+        {{-- @if (request()->routeIs('admin.users.index'))
         <x-dropdown-link :href="route('admin.users.show', $user)">
             {{ __('View') }}
         </x-dropdown-link>
-        @endif
+        @endif --}}
         @unless (request()->routeIs('admin.users.edit'))
         <x-dropdown-link :href="route('admin.users.edit', $user)">
             {{ __('Edit') }}
