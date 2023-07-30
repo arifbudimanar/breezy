@@ -64,13 +64,7 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </div>
-
-        <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-            {{ $slot }}
-        </div>
         <div class="flex space-x-5">
-
             <div class="mt-5 flex items-center text-gray-600 dark:text-gray-400">
                 <div class="mr-2">{{ __('Language') }}</div>
                 @include('layouts.partials.language')
@@ -80,6 +74,12 @@
                 @include('layouts.partials.theme')
             </div>
         </div>
+
+        <div
+            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            {{ $slot }}
+        </div>
+
     </div>
 </body>
 
