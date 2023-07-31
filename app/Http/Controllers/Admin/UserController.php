@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UserStoreRequest;
+use App\Http\Requests\Admin\UserUpdateRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 
@@ -37,13 +37,8 @@ class UserController extends Controller
     {
         return view('admin.users.create');
     }
-    public function store(Request $request): RedirectResponse
+    public function store(UserStoreRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users,email',
-            'password' => ['required', Rules\Password::defaults()],
-        ]);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -55,12 +50,8 @@ class UserController extends Controller
     {
         return view('admin.users.edit', compact('user'));
     }
-    public function update(User $user, Request $request): RedirectResponse
+    public function update(User $user, UserUpdateRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-        ]);
         if ($user->email !== $request->email) {
             $user->email_verified_at = null;
         }
