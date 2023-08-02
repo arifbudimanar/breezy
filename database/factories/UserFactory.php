@@ -36,33 +36,33 @@ class UserFactory extends Factory
         ]);
     }
 
-    public function emailVerified()
+    public function emailVerified(): static
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => now(),
         ]);
     }
 
-    public function verified()
+    public function verified(): static
     {
         return $this->state(fn (array $attributes) => [
             'is_verified' => true,
         ]);
     }
 
-    public function notVerified()
+    public function notVerified(): static
     {
         return $this->state(fn (array $attributes) => [
             'is_verified' => false,
         ]);
     }
-    public function admin()
+    public function admin(): static
     {
         return $this->state(fn (array $attributes) => [
             'is_admin' => true,
         ]);
     }
-    public function user()
+    public function user(): static
     {
         return $this->state(fn (array $attributes) => [
             'is_admin' => false,
