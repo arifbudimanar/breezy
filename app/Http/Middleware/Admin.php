@@ -15,7 +15,12 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user() && $request->user()->is_admin) {
+        if (
+            $request->user()->isAdmin() &&
+            $request->user()->isEmailVerified() &&
+            $request->user()->isUserVerified() &&
+            $request->user()->isCompletedProfile()
+        ) {
             return $next($request);
         }
 
