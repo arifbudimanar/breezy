@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
+            // 'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];
@@ -29,10 +29,43 @@ class UserFactory extends Factory
     /**
      * Indicate that the model's email address should be unverified.
      */
-    public function unverified(): static
+    public function emailNotVerified(): static
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
+        ]);
+    }
+
+    public function emailVerified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'email_verified_at' => now(),
+        ]);
+    }
+
+    public function verified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_verified' => true,
+        ]);
+    }
+
+    public function notVerified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_verified' => false,
+        ]);
+    }
+    public function admin()
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_admin' => true,
+        ]);
+    }
+    public function user()
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_admin' => false,
         ]);
     }
 }
