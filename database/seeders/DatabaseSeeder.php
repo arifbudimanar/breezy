@@ -13,20 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'email_verified_at' => now(),
-            'is_admin' => true,
-            'is_verified' => true,
-        ]);
-        User::factory()->create([
-            'name' => 'Arif Budiman Arrosyid',
-            'email' => 'arifbudimanarrosyid@gmail.com',
-            'email_verified_at' => now(),
-            'is_admin' => true,
-            'is_verified' => true,
-        ]);
+        User::factory()
+            ->admin()
+            ->verified()
+            ->emailVerified()
+            ->create([
+                'name' => 'Admin',
+                'email' => 'admin@admin.com',
+            ]);
+        User::factory()
+            ->admin()
+            ->verified()
+            ->emailVerified()
+            ->create([
+                'name' => 'Arif Budiman Arrosyid',
+                'email' => 'arifbudimanarrosyid@gmail.com',
+            ]);
 
         User::factory(6)
             ->user()
