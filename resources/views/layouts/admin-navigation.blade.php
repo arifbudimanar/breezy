@@ -1,3 +1,9 @@
+<div
+    class="bg-indigo-100 dark:bg-indigo-900/50  border-b border-gray-100 dark:border-gray-700 py-2 px-4 sm:px6 md:hidden">
+    <p class="text-sm text-gray-800 dark:text-gray-300 text-center">
+        {{ __('For the best experience, we recommend avoiding the use of mobile devices to access our admin panel!') }}
+    </p>
+</div>
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-full mx-auto px-4 sm:px-6">
