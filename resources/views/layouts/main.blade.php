@@ -60,7 +60,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 selection:bg-indigo-100 dark:selection:bg-indigo-800">
+<body
+    class="font-sans antialiased bg-white sm:bg-gray-100 dark:bg-gray-800 sm:dark:bg-gray-900 selection:bg-indigo-100 dark:selection:bg-indigo-800">
     @if (session('success'))
     <div class="fixed z-30 right-5 bottom-5" x-data="{ show: true }" x-show="show" x-transition
         x-init="setTimeout(() => show = false, 8000)">
@@ -123,7 +124,7 @@
         </div>
     </div>
     @endif
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen">
         @include('layouts.main-navigation')
 
         <!-- Page Heading -->

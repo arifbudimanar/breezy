@@ -59,7 +59,7 @@
 </head>
 
 <body
-    class="font-sans antialiased min-h-screen bg-gray-100 dark:bg-gray-900 selection:bg-indigo-100 dark:selection:bg-indigo-800">
+    class="font-sans antialiased min-h-screen bg-white sm:bg-gray-100 dark:bg-gray-800 sm:dark:bg-gray-900 selection:bg-indigo-100 dark:selection:bg-indigo-800">
     @if (session('success'))
     <div class="fixed z-30 right-5 bottom-5" x-data="{ show: true }" x-show="show" x-transition
         x-init="setTimeout(() => show = false, 8000)">
@@ -122,7 +122,7 @@
         </div>
     </div>
     @endif
-    <div class="w-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
+    <div class="w-full min-h-screen flex flex-col">
         @include('layouts.admin-navigation')
         <div class="flex flex-grow">
             @include('layouts.admin-sidebar')
