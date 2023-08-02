@@ -93,7 +93,7 @@
     "Search results for : ": "Search results for : ",
     "Manage all user, search by name or email.": "Manage all user, search by name or email.",
     "Search": "Search",
-    "Name or email": "Name or email",
+    "Search here": "Search here",
     "Number": "Number",
     "Verification": "Verification",
     "Role": "Role",
@@ -144,5 +144,14 @@
     "Create a new user account.": "Create a new user account.",
     "Please complete your profile with valid information.": "Please complete your profile with valid information.",
     "Complete Your Profile": "Complete Your Profile",
-    "Not registered yet?": "Not registered yet?"
+    "Not registered yet?": "Not registered yet?",
+    "Select Role": "Select Role",
+    "Select Status": "Select Status",
+    "role": "role",
+    "Verified": "Verified",
+    "Not Verified": "Not Verified",
+    "verified": "verified",
+    "not verified": "not verified",
+    "Apply": "Apply",
+    "Filter for": "Filter for"
 }

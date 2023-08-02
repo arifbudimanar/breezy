@@ -93,7 +93,7 @@
     "Search results for : ": "Hasil pencarian untuk : ",
     "Manage all user, search by name or email.": "Kelola semua pengguna, cari berdasarkan nama atau surel.",
     "Search": "Cari",
-    "Name or email": "Nama atau surel",
+    "Search here": "Cari di sini",
     "Number": "Number",
     "Verification": "Verifikasi",
     "Role": "Peran",
@@ -144,5 +144,14 @@
     "Create a new user account.": "Buat akun pengguna baru.",
     "Please complete your profile with valid information.": "Harap lengkapi profil Anda dengan informasi yang valid.",
     "Complete Your Profile": "Lengkapi Profil Anda",
-    "Not registered yet?": "Belum mendaftar?"
+    "Not registered yet?": "Belum mendaftar?",
+    "Select Role": "Pilih Peran",
+    "Select Status": "Pilih Status",
+    "role": "peran",
+    "Verified": "Terverifikasi",
+    "Not Verified": "Belum Diverifikasi",
+    "verified": "terverifikasi",
+    "not verified": "belum diverifikasi",
+    "Apply": "Terapkan",
+    "Filter for": "Filter untuk"
 }
