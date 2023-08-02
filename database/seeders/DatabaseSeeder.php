@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         User::factory(6)
             ->user()
             ->emailNotVerified()
+            ->notVerified()
             ->create();
         User::factory(6)
             ->admin()
