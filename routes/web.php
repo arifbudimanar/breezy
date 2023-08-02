@@ -18,12 +18,8 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::view('/', 'welcome')->name('welcome')->middleware('guest');
+Route::view('/home', 'home')->name('home');
 
 Route::get('/lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
@@ -42,23 +38,9 @@ Route::prefix('user')->name('user.')->middleware(['auth'])->group(function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin', 'verified_email', 'verified_account'])->group(function () {
     Route::get('/dashboard', AdminDashboardController::class)->name('dashboard');
     Route::resource('users', AdminUserController::class)
-        ->only([
-            'index',
-            'create',
-            'store',
-            'show',
-            'edit',
-            'update',
-            'destroy'
-        ])
+        ->only(['index', 'create', 'store', 'show', 'edit', 'update', 'destroy'])
         ->names([
-            'index' => 'users.index',
-            'create' => 'users.create',
-            'store' => 'users.store',
-            'show' => 'users.show',
-            'edit' => 'users.edit',
-            'update' => 'users.update',
-            'destroy' => 'users.destroy',
+            'index' => 'users.index', 'create' => 'users.create', 'store' => 'users.store', 'show' => 'users.show', 'edit' => 'users.edit', 'update' => 'users.update', 'destroy' => 'users.destroy',
         ]);
     Route::patch('/users/{user}/make-admin', [AdminUserController::class, 'makeAdmin'])->name('users.makeadmin');
     Route::patch('/users/{user}/remove-admin', [AdminUserController::class, 'removeAdmin'])->name('users.removeadmin');
