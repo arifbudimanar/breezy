@@ -109,13 +109,13 @@
                                 </div>
                             </div>
                         </x-subcard.title>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                        <p class="mt-2 text-base text-gray-500 dark:text-gray-400 flex items-center">
                             {{ $user->email }}
                             @if ($user->email_verified_at)
                             <x-badge.verified-email />
                             @endif
                         </p>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                        <p class="mt-2 text-base text-gray-500 dark:text-gray-400 flex items-center">
                             @if ($user->is_admin)
                             <x-badge.admin />
                             @else
