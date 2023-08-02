@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User with email verification, verified account, and admin privileges
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
@@ -28,18 +27,25 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
             'is_verified' => true,
         ]);
-        // User with no email verification
-        User::factory()->create([
-            'name' => 'User 1',
-            'email' => 'user1@user.com',
-            'email_verified_at' => null,
-        ]);
-        // User with no verified account
-        User::factory()->create([
-            'name' => 'User 2',
-            'email' => 'user2@user.com',
-            'is_verified' => false,
-        ]);
-        User::factory(1000)->create();
+
+        User::factory(6)
+            ->user()
+            ->emailVerified()
+            ->notVerified()
+            ->create();
+        User::factory(6)
+            ->user()
+            ->emailVerified()
+            ->verified()
+            ->create();
+        User::factory(6)
+            ->user()
+            ->emailNotVerified()
+            ->create();
+        User::factory(6)
+            ->admin()
+            ->verified()
+            ->emailVerified()
+            ->create();
     }
 }
