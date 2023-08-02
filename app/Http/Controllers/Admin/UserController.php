@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UserListRequest;
 use App\Http\Requests\Admin\UserStoreRequest;
 use App\Http\Requests\Admin\UserUpdateRequest;
 use Illuminate\Support\Facades\Hash;
@@ -12,21 +13,23 @@ use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
-    public function index(): View
+    public function index(UserListRequest $request): View
     {
-        $search = request('search');
-        if ($search) {
-            $users = User::where(function ($query) use ($search) {
-                $query->where('name', 'like', '%' . $search . '%')
-                    ->orWhere('email', 'like', '%' . $search . '%');
+        $users = User::orderBy('name')
+            ->when($request->search, function ($query, $search) {
+                $query->where(function ($query) use ($search) {
+                    $query->where('name', 'like', '%' . $search . '%')
+                        ->orWhere('email', 'like', '%' . $search . '%');
+                });
             })
-                ->orderBy('name')
-                ->paginate(18)
-                ->withQueryString();
-        } else {
-            $users = User::orderBy('name')
-                ->paginate(18);
-        }
+            ->when($request->role, function ($query, $role) {
+                $query->where('is_admin', $role === 'admin');
+            })
+            ->when($request->verified_account, function ($query, $verified_account) {
+                $query->where('is_verified', $verified_account === 'true');
+            })
+            ->paginate(18)
+            ->withQueryString();
         return view('admin.users.index', compact('users'));
     }
     public function show(User $user): View
@@ -72,7 +75,7 @@ class UserController extends Controller
         if (!$user->isEmailVerified()) {
             return back()->with('warning', __('Error, :name email is not verified!', ['name' => $user->name]));
         }
-        if (!$user->isVerified()) {
+        if (!$user->isUserVerified()) {
             return back()->with('warning', __('Error, :name account is not verified!', ['name' => $user->name]));
         }
         $user->timestamps = false;
