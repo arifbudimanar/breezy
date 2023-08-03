@@ -136,6 +136,9 @@
                     <table class="w-full text-base text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
+                                {{-- <th scope="col" class="px-6 py-3">
+
+                                </th> --}}
                                 <th scope="col" class="px-6 py-3">
                                     Name
                                 </th>
@@ -153,6 +156,13 @@
                         <tbody>
                             @forelse ($users as $user)
                             <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-100 even:dark:bg-gray-700">
+                                {{-- <td class="px-6 py-4"> --}}
+                                    {{-- <div class="flex space-x-3">
+                                        <a href="{{ route('admin.users.edit', $user) }}"
+                                            class="hover:underline">Edit</a>
+                                    </div> --}}
+                                    {{-- @include('admin.users.partials.action')
+                                </td> --}}
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-gray-200">
                                     <div class="flex">
                                         <a href="{{ route('admin.users.show', $user) }}"
@@ -205,11 +215,11 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{-- <div class="flex space-x-3">
+                                    <div class="flex space-x-3">
                                         <a href="{{ route('admin.users.edit', $user) }}"
                                             class="hover:underline">Edit</a>
-                                    </div> --}}
-                                    @include('admin.users.partials.action')
+                                    </div>
+                                    {{-- @include('admin.users.partials.action') --}}
                                 </td>
 
                             </tr>
