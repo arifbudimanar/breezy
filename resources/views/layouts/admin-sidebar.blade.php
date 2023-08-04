@@ -1,4 +1,4 @@
-<div class="hidden sm:flex border-r border-gray-100 dark:border-gray-700">
+<div class="hidden md:flex border-r border-gray-100 dark:border-gray-700">
     <div class="bg-white dark:bg-gray-800">
         <div class="px-4 pt-4">
             <div class="flex pl-2 items-center">
