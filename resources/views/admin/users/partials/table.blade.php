@@ -11,7 +11,7 @@
                 <th scope="col" class="hidden px-6 py-3 lg:table-cell">
                     {{ __('Role') }}
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-6 pr-2 lg:pr-4 py-3">
                     {{ __('Option') }}
                 </th>
             </tr>
@@ -31,11 +31,9 @@
                                     <x-badge.unverified-account />
                                 @endif
                             </div>
-
-                            {{-- <p class="lg:hidden text-base font-light">{{ $user->email }}</p> --}}
                         </div>
-                        <div class="flex text-base xl:hidden text-gray-500 dark:text-gray-400 ">
-                            <p>
+                        <div class="flex xl:hidden font-normal text-gray-500 dark:text-gray-400">
+                            <p class="">
                                 {{ $user->email }}
                             </p>
                             <div class="ml-1 flex items-center">
@@ -55,7 +53,7 @@
                         </div>
                     </td>
                     <td scope="row"
-                        class="px-6 py-4 font-medium text-gray-500 dark:text-gray-400 hidden xl:table-cell">
+                        class="px-6 py-4 font-base text-gray-500 dark:text-gray-400 hidden xl:table-cell">
                         <div class="flex">
                             <p>
                                 {{ $user->email }}
@@ -77,7 +75,7 @@
                             <x-badge.user />
                         @endif
                     </td>
-                    <td class="pl-6 py-4">
+                    <td class="pl-6 pr-2 lg:pr-4 py-4">
                         <div class="flex justify-items-start">
                             {{-- <a href="{{ route('admin.users.edit', $user) }}"
                             class="hover:underline">Edit</a> --}}
