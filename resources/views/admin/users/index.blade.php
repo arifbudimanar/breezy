@@ -219,7 +219,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex space-x-3">
                                             <a href="{{ route('admin.users.edit', $user) }}"
-                                                class="hover:underline">Edit</a>
+                                                class="hover:underline">{{ __('Edit') }}</a>
                                         </div>
                                         {{-- @include('admin.users.partials.action') --}}
                                     </td>
