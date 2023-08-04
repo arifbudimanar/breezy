@@ -56,12 +56,14 @@ class UserFactory extends Factory
             'is_verified' => false,
         ]);
     }
+
     public function admin(): static
     {
         return $this->state(fn (array $attributes) => [
             'is_admin' => true,
         ]);
     }
+
     public function user(): static
     {
         return $this->state(fn (array $attributes) => [

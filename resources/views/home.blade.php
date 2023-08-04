@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 sm:space-y-6">
             <x-card.app>
                 <x-card.title>
-                    {{ __("Card Title") }}
+                    {{ __('Card Title') }}
                 </x-card.title>
                 <x-card.description>
                     {{ __('Card Description') }}

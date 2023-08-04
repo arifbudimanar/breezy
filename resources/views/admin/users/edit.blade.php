@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             <a href="{{ route('admin.users.index') }}" class="hover:text-indigo-600 hover:dark:text-indigo-400">
-                {{__('User') }}
+                {{ __('User') }}
             </a>
             /
             <a href="{{ route('admin.users.show', $user) }}" class="hover:text-indigo-600 hover:dark:text-indigo-400">

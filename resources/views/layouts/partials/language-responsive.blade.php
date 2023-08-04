@@ -8,9 +8,9 @@
 
     <div class="mt-3 space-y-1">
         @foreach (config('locales') as $lang)
-        <x-responsive-nav-link :href="route('lang.switch', $lang)">
-            {{ strtoupper($lang) }}
-        </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('lang.switch', $lang)">
+                {{ strtoupper($lang) }}
+            </x-responsive-nav-link>
         @endforeach
     </div>
 </div>

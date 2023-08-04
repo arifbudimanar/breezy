@@ -12,68 +12,62 @@
 
     <x-slot name="content">
         @if (request()->routeIs('admin.users.index'))
-        <x-dropdown-link :href="route('admin.users.show', $user)">
-            {{ __('View') }}
-        </x-dropdown-link>
+            <x-dropdown-link :href="route('admin.users.show', $user)">
+                {{ __('View') }}
+            </x-dropdown-link>
         @endif
         @unless (request()->routeIs('admin.users.edit'))
-        <x-dropdown-link :href="route('admin.users.edit', $user)">
-            {{ __('Edit') }}
-        </x-dropdown-link>
+            <x-dropdown-link :href="route('admin.users.edit', $user)">
+                {{ __('Edit') }}
+            </x-dropdown-link>
         @endunless
         @if ($user->isUserVerified())
-        @if ($user->isAdmin())
-        <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
-            @csrf
-            @method('PATCH')
-            <x-dropdown-link :href="route('admin.users.removeadmin', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
-                {{ __('Remove Admin') }}
-            </x-dropdown-link>
-        </form>
-        @else
-        <form action="{{ route('admin.users.makeadmin', $user) }}" method="Post">
-            @csrf
-            @method('PATCH')
-            <x-dropdown-link :href="route('admin.users.makeadmin', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
-                {{ __('Make Admin') }}
-            </x-dropdown-link>
-        </form>
-        @endif
+            @if ($user->isAdmin())
+                <form action="{{ route('admin.users.removeadmin', $user) }}" method="Post">
+                    @csrf
+                    @method('PATCH')
+                    <x-dropdown-link :href="route('admin.users.removeadmin', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
+                        {{ __('Remove Admin') }}
+                    </x-dropdown-link>
+                </form>
+            @else
+                <form action="{{ route('admin.users.makeadmin', $user) }}" method="Post">
+                    @csrf
+                    @method('PATCH')
+                    <x-dropdown-link :href="route('admin.users.makeadmin', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
+                        {{ __('Make Admin') }}
+                    </x-dropdown-link>
+                </form>
+            @endif
         @endif
         @if ($user->isUserVerified())
-        <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
-            @csrf
-            @method('PATCH')
-            <x-dropdown-link :href="route('admin.users.unverify', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
-                {{ __('Unverify Account') }}
-            </x-dropdown-link>
-        </form>
+            <form action="{{ route('admin.users.unverify', $user) }}" method="Post">
+                @csrf
+                @method('PATCH')
+                <x-dropdown-link :href="route('admin.users.unverify', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
+                    {{ __('Unverify Account') }}
+                </x-dropdown-link>
+            </form>
         @else
-        <form action="{{ route('admin.users.verify', $user) }}" method="Post">
-            @csrf
-            @method('PATCH')
-            <x-dropdown-link :href="route('admin.users.verify', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
-                {{ __('Verify Account') }}
-            </x-dropdown-link>
-        </form>
+            <form action="{{ route('admin.users.verify', $user) }}" method="Post">
+                @csrf
+                @method('PATCH')
+                <x-dropdown-link :href="route('admin.users.verify', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
+                    {{ __('Verify Account') }}
+                </x-dropdown-link>
+            </form>
         @endif
         <form action="{{ route('admin.users.resetpassword', $user) }}" method="Post">
             @csrf
             @method('PATCH')
-            <x-dropdown-link :href="route('admin.users.resetpassword', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
+            <x-dropdown-link :href="route('admin.users.resetpassword', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
                 {{ __('Reset Password') }}
             </x-dropdown-link>
         </form>
         <form action="{{ route('admin.users.destroy', $user) }}" method="Post">
             @csrf
             @method('DELETE')
-            <x-dropdown-link :href="route('admin.users.destroy', $user)"
-                onclick="event.preventDefault(); this.closest('form').submit();">
+            <x-dropdown-link :href="route('admin.users.destroy', $user)" onclick="event.preventDefault(); this.closest('form').submit();">
                 {{ __('Delete Account') }}
             </x-dropdown-link>
         </form>

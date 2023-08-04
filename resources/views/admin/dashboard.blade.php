@@ -33,7 +33,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 mt-6">
                     <x-subcard.app>
                         <x-subcard.title>
-                            {{ __("All Users") }}
+                            {{ __('All Users') }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $allUsers }}
@@ -41,7 +41,7 @@
                     </x-subcard.app>
                     <x-subcard.app>
                         <x-subcard.title>
-                            {{ __("Admin Users") }}
+                            {{ __('Admin Users') }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $adminUsers }}
@@ -49,7 +49,7 @@
                     </x-subcard.app>
                     <x-subcard.app>
                         <x-subcard.title>
-                            {{ __("Not Verified Account Users") }}
+                            {{ __('Not Verified Account Users') }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $notVerifiedUsers }}
@@ -57,7 +57,7 @@
                     </x-subcard.app>
                     <x-subcard.app>
                         <x-subcard.title>
-                            {{ __("Not Verified Email Users") }}
+                            {{ __('Not Verified Email Users') }}
                         </x-subcard.title>
                         <x-subcard.value>
                             {{ $notVerifiedEmailUsers }}

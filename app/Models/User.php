@@ -27,6 +27,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
+ *
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
@@ -41,50 +42,61 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ *
  * @mixin \Eloquent
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable = [
         'name',
         'email',
         'password',
         'is_verified',
         'is_admin',
-        'email_verified_at'
+        'email_verified_at',
     ];
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
         'is_verified' => 'boolean',
         'is_admin' => 'boolean',
-        'password' => 'hashed'
+        'password' => 'hashed',
     ];
+
     public function getFirstNameAttribute(): string
     {
         return explode(' ', $this->name)[0];
     }
+
     public function getLastNameAttribute(): string
     {
-        $name = explode(' ',  $this->name);
+        $name = explode(' ', $this->name);
+
         return end($name);
     }
+
     public function isAdmin(): bool
     {
         return $this->is_admin == true;
     }
+
     public function isUserVerified(): bool
     {
         return $this->is_verified == true;
     }
+
     public function isEmailVerified(): bool
     {
         return $this->email_verified_at !== null;
     }
+
     public function isCompletedProfile(): bool
     {
         return $this->name !== null && $this->email !== null && $this->password !== null;

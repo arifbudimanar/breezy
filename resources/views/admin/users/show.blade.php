@@ -1,10 +1,8 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            <a href="{{ route('admin.users.index') }}" class="hover:text-indigo-600 hover:dark:text-indigo-400">{{
-                __('User')
-                }}</a> / {{
-            $user->name }}
+            <a href="{{ route('admin.users.index') }}"
+                class="hover:text-indigo-600 hover:dark:text-indigo-400">{{ __('User') }}</a> / {{ $user->name }}
         </h2>
     </x-slot>
 
@@ -43,22 +41,22 @@
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <p class="w-36">{{ __('Verified Account') }}</p>
                             @if ($user->is_verified)
-                            <div class="flex items-center">
-                                <x-badge.verified-account />
-                            </div>
+                                <div class="flex items-center">
+                                    <x-badge.verified-account />
+                                </div>
                             @else
-                            <div class="flex items-center">
-                                <x-badge.unverified-account />
-                            </div>
+                                <div class="flex items-center">
+                                    <x-badge.unverified-account />
+                                </div>
                             @endif
                         </div>
                         <div class="block font-medium text-sm text-gray-700 dark:text-gray-300 sm:flex">
                             <p class="w-36">{{ __('Role') }}</p>
                             <div>
                                 @if ($user->is_admin)
-                                <x-badge.admin />
+                                    <x-badge.admin />
                                 @else
-                                <x-badge.user />
+                                    <x-badge.user />
                                 @endif
                             </div>
                         </div>

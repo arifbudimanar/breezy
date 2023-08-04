@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
-use App\Http\Controllers\User\ProfileController as UserProfileController;
-use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
+use App\Http\Controllers\User\ProfileController as UserProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,6 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 |
 */
 
-// Route::view('/', 'welcome')->name('welcome')->middleware('guest');
 Route::view('/', 'home')->name('home');
 Route::get('/lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 Route::middleware('auth')
@@ -52,4 +51,4 @@ Route::prefix('admin')
         // Routes that require an auth, admin, verified email and verified account go here
     });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
